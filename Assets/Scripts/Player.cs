@@ -1,15 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	public static string playerShape = "";
+	public static int relationshipLvlBella = 0;
+	public static string currentDialogueLoad = "";
+	//public static string currentDialogueLoad = "DialogueAbuelaHome_Start.txt"; //change after done testing
+
+	public void addRelationshipNum(string relName, int relNum)
+	{
+		if (relName == "Bella")
+			relationshipLvlBella += relNum;
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void loadNextDialogue (string dialogueToLoad)
+	{
+		currentDialogueLoad = dialogueToLoad;
+	}
+
+	public string getCurrentDialogue()
+	{
+		return currentDialogueLoad;
+	}
+
+
+	public string getPlayerShape() {
+		return playerShape;
+	}
+
+	public void setPlayerShape(string shapeToSet) {
+		playerShape = shapeToSet;
 	}
 }
