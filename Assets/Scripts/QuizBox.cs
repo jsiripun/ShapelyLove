@@ -39,16 +39,19 @@ public class QuizBox : MonoBehaviour {
 		parser.fileName = playa.getQuizQuestions();
 		parser.loadQuestions();
 		fileLineCount = parser.GetLineCount ();
+		characterCount = new List<string> ();
 		lineNum = 0;
 		setBackground();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log ("line num: " + lineNum);
-		//Debug.Log ("file count: " + fileLineCount);
+
+		setBackground ();
+
 		if (lineNum == fileLineCount) {
-			Debug.Log ("at end of file");
+			//calculate the number of names to figure out what shape the player is
+			playa.setPlayerShape (calculateShape ());
 		}
 
 	}
@@ -63,8 +66,64 @@ public class QuizBox : MonoBehaviour {
 		float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
 		background.transform.localScale = new Vector3(
-			worldScreenWidth / sr.sprite.bounds.size.x * 1.75f,
-			worldScreenHeight / sr.sprite.bounds.size.y * 1.75f, 0);
+			worldScreenWidth / sr.sprite.bounds.size.x,
+			worldScreenHeight / sr.sprite.bounds.size.y, 1);
+	}
+
+	private string calculateShape() {
+		int squareCount = 0;
+		int triangleCount = 0;
+		int rectangleCount = 0;
+		int circleCount = 0;
+		int maxCount = 0;
+		string toReturn = "";
+
+		for (int i = 0; i < characterCount.Count; i++) {
+			
+			switch (characterCount.ElementAt(i))
+			{
+			case "Square":
+				squareCount = squareCount + 1;
+				if (maxCount < squareCount) {
+					maxCount = squareCount;
+					toReturn = "Square";
+				}
+				break;
+			case "Rectangle":
+				rectangleCount = rectangleCount + 1;
+				if (maxCount < rectangleCount) {
+					maxCount = rectangleCount;
+					toReturn = "Rectangle";
+				}
+				break;
+			case "Triangle":
+				triangleCount = triangleCount + 1;
+				if (maxCount < triangleCount) {
+					maxCount = triangleCount;
+					toReturn = "Triangle";
+				}
+				break;
+			case "Circle":
+				circleCount = circleCount + 1;
+				if (maxCount < circleCount) {
+					maxCount = circleCount;
+					toReturn = "Circle";
+				}
+				break;
+			default:
+				Debug.Log ("ERROR: Issue in QuizBox.cs - calculateShape() - Shape is not identifiable: " + characterCount.ElementAt (i));
+				break;   
+			}
+
+		}
+
+		Debug.Log ("square count: " + squareCount);
+		Debug.Log ("rectangle count: " + rectangleCount);
+		Debug.Log ("triangle count: " + triangleCount);
+		Debug.Log ("circle count: " + circleCount);
+		Debug.Log ("you are a " + toReturn);
+
+		return toReturn;
 	}
 
 
@@ -88,59 +147,76 @@ public class QuizBox : MonoBehaviour {
 			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.32f), Screen.width * (.6f), Screen.height * (.30f)), ans1, answerStyle))
 			{
 				// option 0
+				charsForAns1 = parser.getCharactersForAns1(lineNum);
+				characterCount.AddRange (charsForAns1);
 				lineNum = lineNum+1;
-
 			}
 
 			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.30f)), ans2, answerStyle))
 			{
 				// option 1
+				charsForAns2 = parser.getCharactersForAns2(lineNum);
+				characterCount.AddRange (charsForAns2);
 				lineNum = lineNum+1;
 			}
-		} else if (numAns == 3) {
+		}
+		else if (numAns == 3) {
 			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.30f), Screen.width * (.6f), Screen.height * (.15f)), ans1, answerStyle))
 			{
 				// option 0
+				charsForAns1 = parser.getCharactersForAns1(lineNum);
+				characterCount.AddRange (charsForAns1);
 				lineNum = lineNum+1;
-
 			}
 
 			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.48f), Screen.width * (.6f), Screen.height * (.15f)), ans2, answerStyle))
 			{
 				// option 1
+				charsForAns2 = parser.getCharactersForAns2(lineNum);
+				characterCount.AddRange (charsForAns2);
 				lineNum = lineNum+1;
 			}
 
 			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.15f)), ans3, answerStyle))
 			{
 				// option 2
+				charsForAns3 = parser.getCharactersForAns3(lineNum);
+				characterCount.AddRange (charsForAns3);
 				lineNum = lineNum+1;
 			}
 		
-		} else if (numAns == 4) {
+		} 
+		else if (numAns == 4) {
 			
 		if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.30f), Screen.width * (.6f), Screen.height * (.15f)), ans1, answerStyle))
 			{
 				// option 0
-				lineNum = lineNum+1;
-				
+				charsForAns1 = parser.getCharactersForAns1(lineNum);
+				characterCount.AddRange (charsForAns1);
+				lineNum = lineNum+1;				
 			}
 
 		if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.48f), Screen.width * (.6f), Screen.height * (.15f)), ans2, answerStyle))
 			{
 				// option 1
+				charsForAns2 = parser.getCharactersForAns2(lineNum);
+				characterCount.AddRange (charsForAns2);
 				lineNum = lineNum+1;
 			}
 
 		if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.15f)), ans3, answerStyle))
 			{
 				// option 2
+				charsForAns3 = parser.getCharactersForAns3(lineNum);
+				characterCount.AddRange (charsForAns3);
 				lineNum = lineNum+1;
 			}
 		if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.82f), Screen.width * (.6f), Screen.height * (.15f)), ans4, answerStyle))
 		{
-			// option 2
-			lineNum = lineNum+1;
+			// option 3
+				charsForAns4 = parser.getCharactersForAns4(lineNum);
+				characterCount.AddRange (charsForAns4);
+				lineNum = lineNum+1;
 		}
 		}
 	}

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 
-	public static string playerShape = "";
+	private static string playerShape = "";
 	public static int relationshipLvlBella = 0;
 	public static string quizToLoad = "PlayerQuizQuestions.txt";
 	public static string currentDialogueLoad = "";
