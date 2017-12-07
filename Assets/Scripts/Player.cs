@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
 	public static string playerShape = "";
 	public static int relationshipLvlBella = 0;
+	public static string quizToLoad = "PlayerQuizQuestions.txt";
 	public static string currentDialogueLoad = "";
 	//public static string currentDialogueLoad = "DialogueAbuelaHome_Start.txt"; //change after done testing
 
@@ -26,6 +27,10 @@ public class Player : MonoBehaviour {
 		return currentDialogueLoad;
 	}
 
+	public string getQuizQuestions()
+	{
+		return quizToLoad;
+	}
 
 	public string getPlayerShape() {
 		return playerShape;

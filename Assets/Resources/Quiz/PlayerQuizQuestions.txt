@@ -1,0 +1,5 @@
+"If you’re given a task, do you complete it:", "ASAP|Square", "On time|Triangle", "After it’s due|Rectangle", "Never|Circle"
+"Do you put your toilet paper over or under?", "Over|Square|Triangle", "Under|Rectangle|Circle", "Bidets Only|Triangle"
+"Is cantaloupe pronounced:", "KANT-A-LOOP|Rectangle|Circle", "KANT-A-LOPE|Square|Triangle"
+"How many edges do you have?", "1-3|Circle", "4-6|Square", "7-10|Triangle", "10+|Rectangle"
+"What’s the protocol for spaghetti?", "In the mouth|Square", "In the bowl|Triangle", "In the hand|Circle", "In the pocket|Rectangle"

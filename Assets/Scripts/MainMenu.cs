@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour {
 
 	public void LoadStartScene ()
 	{
-		SceneManager.LoadScene("OnTrain");
+		SceneManager.LoadScene("PlayerQuiz");
 	}
 
 	public void LoadOptionsScene()
