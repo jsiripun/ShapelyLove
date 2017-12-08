@@ -58,8 +58,8 @@ public class QuizBox : MonoBehaviour {
 		screenTextLineNum = 0;
 		textStillDisplaying = false;
 		takingQuiz = false;
-		color = Color.black;
-		fadeFloat = 2f;
+		color = Color.white;
+		fadeFloat = 1.5f;
 
 
 		// quiz section
@@ -119,6 +119,9 @@ public class QuizBox : MonoBehaviour {
 			yield return new WaitForSeconds(Time.deltaTime / t);
 
 		}
+
+		yield return new WaitForSeconds (1.5f);
+
 		yield return StartCoroutine (FadeOutText (t));
 	}
 
@@ -210,6 +213,7 @@ public class QuizBox : MonoBehaviour {
 		if (!takingQuiz) {
 			displayText.normal.textColor = color;
 			displayText.wordWrap = true;
+			GUI.color = color;
 			displayText.fontSize = (Screen.width + Screen.height) / 40;
 			GUI.TextField(new Rect(Screen.width * (.15f), Screen.height * (.3f), Screen.width * (.7f), Screen.height * (.3f)), currScreenText, displayText);
 		}
