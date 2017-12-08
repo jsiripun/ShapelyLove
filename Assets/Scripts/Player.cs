@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	private static string playerShape = "";
 	public static int relationshipLvlBella = 0;
 	public static string quizToLoad = "PlayerQuizQuestions.txt";
+	public static string screenTextToDisplay = "QuizStartText.txt";
 	public static string currentDialogueLoad = "";
 	//public static string currentDialogueLoad = "DialogueAbuelaHome_Start.txt"; //change after done testing
 
@@ -30,6 +31,11 @@ public class Player : MonoBehaviour {
 	public string getQuizQuestions()
 	{
 		return quizToLoad;
+	}
+
+	public string getScreenTextToDisplay()
+	{
+		return screenTextToDisplay;
 	}
 
 	public string getPlayerShape() {

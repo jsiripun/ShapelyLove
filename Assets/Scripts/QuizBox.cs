@@ -5,7 +5,8 @@ using System.Collections.Generic;
 
 public class QuizBox : MonoBehaviour {
 
-	QuizParser parser;
+	QuizParser quizParser;
+	ScreenTextParser screenTextParser;
 	public string quizQuestions;
 
 	private string question;
@@ -19,13 +20,25 @@ public class QuizBox : MonoBehaviour {
 	private List<string> charsForAns3;
 	private List<string> charsForAns4;
 
+
 	//count which character player chooses based on answers
-	private List<string> characterCount;
-	private int fileLineCount;
+	List<string> characterCount;
+	private int quizFileLineCount;
 
-	int lineNum;
+	// taking the quiz
+	private bool takingQuiz;
 
-	public GUIStyle questionStyle, answerStyle;
+	// keep line number count
+	int quizLineNum;
+	int screenTextLineNum;
+	private int screenTextFileLineCount;
+	string currScreenText;
+	Color color;
+	bool textStillDisplaying;
+	public float fadeFloat;
+
+
+	public GUIStyle questionStyle, answerStyle, displayText;
 
 	//player stats
 	public static Player playa;
@@ -33,14 +46,32 @@ public class QuizBox : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		quizQuestions = "";
-		parser = GameObject.Find("QuizParserObject").GetComponent<QuizParser>();
+		// player info
 		playa = GameObject.Find("Player").GetComponent<Player>();
-		parser.fileName = playa.getQuizQuestions();
-		parser.loadQuestions();
-		fileLineCount = parser.GetLineCount ();
-		characterCount = new List<string> ();
-		lineNum = 0;
+
+		// start display text
+		currScreenText = "";
+		screenTextParser = GameObject.Find("ScreenTextParserObject").GetComponent<ScreenTextParser>();
+		screenTextParser.fileName = playa.getScreenTextToDisplay ();
+		screenTextParser.reloadScreenText ();
+		screenTextFileLineCount = screenTextParser.GetLineCount ();
+		screenTextLineNum = 0;
+		textStillDisplaying = false;
+		takingQuiz = false;
+		color = Color.black;
+		fadeFloat = 2f;
+
+
+		// quiz section
+		quizQuestions = "";
+		quizParser = GameObject.Find("QuizParserObject").GetComponent<QuizParser>();
+		quizParser.fileName = playa.getQuizQuestions();
+		quizParser.loadQuestions();
+		characterCount =  new List<string> ();
+		quizFileLineCount = quizParser.GetLineCount ();
+
+		quizLineNum = 0;
+
 		setBackground();
 	}
 	
@@ -49,12 +80,65 @@ public class QuizBox : MonoBehaviour {
 
 		setBackground ();
 
-		if (lineNum == fileLineCount) {
+		if (!takingQuiz) {
+			
+				displayScreenText ();
+
+				if (screenTextLineNum == screenTextFileLineCount) {
+					takingQuiz = true;
+				}
+		}
+
+
+
+		if (quizLineNum == quizFileLineCount) {
 			//calculate the number of names to figure out what shape the player is
 			playa.setPlayerShape (calculateShape ());
 		}
 
 	}
+
+
+	void displayScreenText() {
+		if (!textStillDisplaying) {
+			currScreenText = screenTextParser.getScreenTextAt (screenTextLineNum);
+			textStillDisplaying = true;
+			StartCoroutine (FadeInText (fadeFloat));
+		}
+	}
+
+
+
+
+
+	IEnumerator FadeInText(float t)
+	{
+		color = new Color (color.r, color.g, color.b, 0);
+		while (color.a < 1.0f) {
+			color.a = color.a + (Time.deltaTime / t);
+			yield return new WaitForSeconds(Time.deltaTime / t);
+
+		}
+		yield return StartCoroutine (FadeOutText (t));
+	}
+
+
+	IEnumerator FadeOutText(float t)
+	{
+		color = new Color (color.r, color.g, color.b, 1);
+		while (color.a > 0.0f) {
+			color.a = color.a - (Time.deltaTime / t);
+			yield return new WaitForSeconds(Time.deltaTime / t);
+		}
+		textStillDisplaying = false;
+		screenTextLineNum = screenTextLineNum + 1;
+	}
+
+
+
+
+
+
 
 	void setBackground()
 	{
@@ -117,107 +201,99 @@ public class QuizBox : MonoBehaviour {
 
 		}
 
-		Debug.Log ("square count: " + squareCount);
-		Debug.Log ("rectangle count: " + rectangleCount);
-		Debug.Log ("triangle count: " + triangleCount);
-		Debug.Log ("circle count: " + circleCount);
-		Debug.Log ("you are a " + toReturn);
-
 		return toReturn;
 	}
 
 
 	void OnGUI()
 	{
-		questionStyle.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 10f);
-		answerStyle.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 15f);
-		questionStyle.wordWrap = true;
-		answerStyle.wordWrap = true;
-
-		question = parser.getQuestion(lineNum);
-		ans1 = parser.getAnswer1(lineNum);
-		ans2 = parser.getAnswer2(lineNum);
-		ans3 = parser.getAnswer3(lineNum);
-		ans4 = parser.getAnswer4(lineNum);
-		numAns = parser.getNumAnswers(lineNum);
-
-		GUI.Label(new Rect(Screen.width * (.1f), Screen.height * (0), Screen.width * (.8f), Screen.height * (.3f)), question, questionStyle);
-		// pending on number of answers, display appropriately
-		if (numAns == 2) {
-			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.32f), Screen.width * (.6f), Screen.height * (.30f)), ans1, answerStyle))
-			{
-				// option 0
-				charsForAns1 = parser.getCharactersForAns1(lineNum);
-				characterCount.AddRange (charsForAns1);
-				lineNum = lineNum+1;
-			}
-
-			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.30f)), ans2, answerStyle))
-			{
-				// option 1
-				charsForAns2 = parser.getCharactersForAns2(lineNum);
-				characterCount.AddRange (charsForAns2);
-				lineNum = lineNum+1;
-			}
+		if (!takingQuiz) {
+			displayText.normal.textColor = color;
+			displayText.wordWrap = true;
+			displayText.fontSize = (Screen.width + Screen.height) / 40;
+			GUI.TextField(new Rect(Screen.width * (.15f), Screen.height * (.3f), Screen.width * (.7f), Screen.height * (.3f)), currScreenText, displayText);
 		}
-		else if (numAns == 3) {
-			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.30f), Screen.width * (.6f), Screen.height * (.15f)), ans1, answerStyle))
-			{
-				// option 0
-				charsForAns1 = parser.getCharactersForAns1(lineNum);
-				characterCount.AddRange (charsForAns1);
-				lineNum = lineNum+1;
-			}
+		else {
+			// taking the quiz
+			questionStyle.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 10f);
+			answerStyle.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 15f);
+			questionStyle.wordWrap = true;
+			answerStyle.wordWrap = true;
 
-			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.48f), Screen.width * (.6f), Screen.height * (.15f)), ans2, answerStyle))
-			{
-				// option 1
-				charsForAns2 = parser.getCharactersForAns2(lineNum);
-				characterCount.AddRange (charsForAns2);
-				lineNum = lineNum+1;
-			}
+			question = quizParser.getQuestion (quizLineNum);
+			ans1 = quizParser.getAnswer1 (quizLineNum);
+			ans2 = quizParser.getAnswer2 (quizLineNum);
+			ans3 = quizParser.getAnswer3 (quizLineNum);
+			ans4 = quizParser.getAnswer4 (quizLineNum);
+			numAns = quizParser.getNumAnswers (quizLineNum);
 
-			if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.15f)), ans3, answerStyle))
-			{
-				// option 2
-				charsForAns3 = parser.getCharactersForAns3(lineNum);
-				characterCount.AddRange (charsForAns3);
-				lineNum = lineNum+1;
-			}
+			GUI.Label (new Rect (Screen.width * (.1f), Screen.height * (0), Screen.width * (.8f), Screen.height * (.3f)), question, questionStyle);
+			// pending on number of answers, display appropriately
+			if (numAns == 2) {
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.32f), Screen.width * (.6f), Screen.height * (.30f)), ans1, answerStyle)) {
+					// option 0
+					charsForAns1 = quizParser.getCharactersForAns1 (quizLineNum);
+					characterCount.AddRange (charsForAns1);
+					quizLineNum = quizLineNum + 1;
+				}
+
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.30f)), ans2, answerStyle)) {
+					// option 1
+					charsForAns2 = quizParser.getCharactersForAns2 (quizLineNum);
+					characterCount.AddRange (charsForAns2);
+					quizLineNum = quizLineNum + 1;
+				}
+			} else if (numAns == 3) {
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.30f), Screen.width * (.6f), Screen.height * (.15f)), ans1, answerStyle)) {
+					// option 0
+					charsForAns1 = quizParser.getCharactersForAns1 (quizLineNum);
+					characterCount.AddRange (charsForAns1);
+					quizLineNum = quizLineNum + 1;
+				}
+
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.48f), Screen.width * (.6f), Screen.height * (.15f)), ans2, answerStyle)) {
+					// option 1
+					charsForAns2 = quizParser.getCharactersForAns2 (quizLineNum);
+					characterCount.AddRange (charsForAns2);
+					quizLineNum = quizLineNum + 1;
+				}
+
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.15f)), ans3, answerStyle)) {
+					// option 2
+					charsForAns3 = quizParser.getCharactersForAns3 (quizLineNum);
+					characterCount.AddRange (charsForAns3);
+					quizLineNum = quizLineNum + 1;
+				}
 		
-		} 
-		else if (numAns == 4) {
+			} else if (numAns == 4) {
 			
-		if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.30f), Screen.width * (.6f), Screen.height * (.15f)), ans1, answerStyle))
-			{
-				// option 0
-				charsForAns1 = parser.getCharactersForAns1(lineNum);
-				characterCount.AddRange (charsForAns1);
-				lineNum = lineNum+1;				
-			}
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.30f), Screen.width * (.6f), Screen.height * (.15f)), ans1, answerStyle)) {
+					// option 0
+					charsForAns1 = quizParser.getCharactersForAns1 (quizLineNum);
+					characterCount.AddRange (charsForAns1);
+					quizLineNum = quizLineNum + 1;				
+				}
 
-		if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.48f), Screen.width * (.6f), Screen.height * (.15f)), ans2, answerStyle))
-			{
-				// option 1
-				charsForAns2 = parser.getCharactersForAns2(lineNum);
-				characterCount.AddRange (charsForAns2);
-				lineNum = lineNum+1;
-			}
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.48f), Screen.width * (.6f), Screen.height * (.15f)), ans2, answerStyle)) {
+					// option 1
+					charsForAns2 = quizParser.getCharactersForAns2 (quizLineNum);
+					characterCount.AddRange (charsForAns2);
+					quizLineNum = quizLineNum + 1;
+				}
 
-		if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.15f)), ans3, answerStyle))
-			{
-				// option 2
-				charsForAns3 = parser.getCharactersForAns3(lineNum);
-				characterCount.AddRange (charsForAns3);
-				lineNum = lineNum+1;
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.65f), Screen.width * (.6f), Screen.height * (.15f)), ans3, answerStyle)) {
+					// option 2
+					charsForAns3 = quizParser.getCharactersForAns3 (quizLineNum);
+					characterCount.AddRange (charsForAns3);
+					quizLineNum = quizLineNum + 1;
+				}
+				if (GUI.Button (new Rect (Screen.width * (.2f), Screen.height * (.82f), Screen.width * (.6f), Screen.height * (.15f)), ans4, answerStyle)) {
+					// option 3
+					charsForAns4 = quizParser.getCharactersForAns4 (quizLineNum);
+					characterCount.AddRange (charsForAns4);
+					quizLineNum = quizLineNum + 1;
+				}
 			}
-		if (GUI.Button(new Rect(Screen.width * (.2f), Screen.height * (.82f), Screen.width * (.6f), Screen.height * (.15f)), ans4, answerStyle))
-		{
-			// option 3
-				charsForAns4 = parser.getCharactersForAns4(lineNum);
-				characterCount.AddRange (charsForAns4);
-				lineNum = lineNum+1;
-		}
 		}
 	}
 
