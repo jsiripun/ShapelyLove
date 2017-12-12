@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour {
 
 	private static string playerShape = "";
+	private static string playerName = "";
 	public static int relationshipLvlBella = 0;
 	public static string quizToLoad = "PlayerQuizQuestions.txt";
 	public static string screenTextToDisplay = "QuizStartText.txt";
@@ -45,4 +46,13 @@ public class Player : MonoBehaviour {
 	public void setPlayerShape(string shapeToSet) {
 		playerShape = shapeToSet;
 	}
+
+	public void setPlayerName(string nameToSet) {
+		playerName = nameToSet;
+	}
+
+	public string getPlayerName () {
+		return playerName;
+	}
+
 }
