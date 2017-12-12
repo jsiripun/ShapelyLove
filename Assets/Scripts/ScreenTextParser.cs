@@ -12,7 +12,7 @@ public class ScreenTextParser : MonoBehaviour {
 	List<string> textLines;
 	public string fileName;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		textLines = new List<string> ();
 	}
 	

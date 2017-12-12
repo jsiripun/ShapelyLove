@@ -17,6 +17,8 @@ public class DialogueParser : MonoBehaviour {
 	List<DialogueLine> lines;
 	Sprite mystery;
 
+	public static Player playa;
+
 	struct DialogueLine
 	{
 		public string charName;
@@ -42,6 +44,7 @@ public class DialogueParser : MonoBehaviour {
 		lines = new List<DialogueLine>();
 		namesInDialogue = new List<string> ();
 		spritesInDialogue = new Dictionary<string, List<Sprite>> ();
+		playa = GameObject.Find("Player").GetComponent<Player>();
 
 	}
 
@@ -206,12 +209,24 @@ public class DialogueParser : MonoBehaviour {
 	{
 		foreach (var x in namesInDialogue) {
 			try {
+				// need to check if it's a regular character or it's the player
+				if(x.Equals("Player")) {
+					string shape = playa.getPlayerShape();
 
-				var sprites = Resources.LoadAll("Sprites/Characters/" + x + "/", typeof(Sprite)).Cast<Sprite>();
-				List<Sprite> temp = spritesInDialogue[x];
-				foreach (var s in sprites)
-				{
-					temp.Add(s);
+					var sprites = Resources.LoadAll("Sprites/Characters/Player/" + shape + "/", typeof(Sprite)).Cast<Sprite>();
+					List<Sprite> temp = spritesInDialogue[x];
+					foreach (var s in sprites)
+					{
+						temp.Add(s);
+					}
+					
+				} else {
+					var sprites = Resources.LoadAll("Sprites/Characters/" + x + "/", typeof(Sprite)).Cast<Sprite>();
+					List<Sprite> temp = spritesInDialogue[x];
+					foreach (var s in sprites)
+					{
+						temp.Add(s);
+					}
 				}
 
 			} catch (Exception e) {
