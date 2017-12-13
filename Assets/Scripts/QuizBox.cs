@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class QuizBox : MonoBehaviour {
 
@@ -36,13 +37,18 @@ public class QuizBox : MonoBehaviour {
 	Color color;
 	bool textStillDisplaying;
 	public float fadeFloat;
+	private bool textDisplaySection1;
+	private bool textDisplaySection2;
 
 
 	public GUIStyle questionStyle, answerStyle, displayText;
 
 	//player stats
 	public static Player playa;
-
+	public InputField nameField;
+	private GameObject gameCanvas;
+	private string playerCharName;
+	private bool gettingName;
 
 	// Use this for initialization
 	void Start () {
@@ -60,6 +66,14 @@ public class QuizBox : MonoBehaviour {
 		takingQuiz = false;
 		color = Color.white;
 		fadeFloat = 1.5f;
+		textDisplaySection1 = true;
+		textDisplaySection2 = false;
+
+		// name input
+		gettingName = false;
+		gameCanvas = GameObject.Find ("Canvas");
+		gameCanvas.SetActive (gettingName);
+
 
 
 		// quiz section
@@ -80,22 +94,77 @@ public class QuizBox : MonoBehaviour {
 
 		setBackground ();
 
-		if (!takingQuiz) {
+		// displaying start text
+		if (!takingQuiz && !gettingName) {
 			
-				displayScreenText ();
+			if ((screenTextLineNum == screenTextFileLineCount) && textDisplaySection1) {
+				gettingName = true;
+				textDisplaySection1 = false;
+				playa.setScreenTextToDisplay ("WelcomePlayerName.txt");
+				screenTextParser.fileName = playa.getScreenTextToDisplay ();
+				screenTextParser.reloadScreenText ();
+				screenTextFileLineCount = screenTextParser.GetLineCount ();
+				screenTextLineNum = 0;
+				textStillDisplaying = false;
+				StopAllCoroutines ();
 
-				if (screenTextLineNum == screenTextFileLineCount) {
-					takingQuiz = true;
-				}
+			} else if ((screenTextLineNum == screenTextFileLineCount) && textDisplaySection2) {
+				textDisplaySection2 = false;	
+				takingQuiz = true;
+				StopAllCoroutines ();
+			} else {
+				displayScreenText ();
+			}
+				
 		}
 
+		// getting player name
+		if (gettingName) {
 
+			// set the button and text field size based on the screen size
+			Button button = gameCanvas.GetComponentInChildren<Button> ();
+			InputField input = gameCanvas.GetComponentInChildren<InputField> ();
 
+			float worldScreenHeight = Camera.main.orthographicSize * 2;
+			float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
+
+			Text [] inputTexts = input.GetComponentsInChildren<Text> ();
+
+			for (int i = 0; i < inputTexts.Count(); i++) {
+				inputTexts[i].fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 7f);
+			}
+
+			input.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, Screen.width * .6f);
+			input.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, Screen.height * .2f);
+
+			button.GetComponent<RectTransform>().anchoredPosition3D = new Vector3 (0, -worldScreenHeight * 9f, 0);
+			button.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, Screen.width * .3f);
+			button.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, Screen.height * .1f);
+
+			// display the canvas
+			gameCanvas.SetActive(gettingName);
+
+			// once done, take the quiz
+		}
+
+		// when done with quiz
 		if (quizLineNum == quizFileLineCount) {
 			//calculate the number of names to figure out what shape the player is
 			playa.setPlayerShape (calculateShape ());
 		}
 
+	}
+
+	public void onSubmit() {
+		playerCharName = nameField.text;
+
+		Debug.Log ("You selected name: " + playerCharName);
+		playa.setPlayerName (playerCharName);
+
+		Debug.Log ("Player name is also " + playa.getPlayerName ());
+		gettingName = false;
+		textDisplaySection2 = true;
+		gameCanvas.SetActive (gettingName);
 	}
 
 
@@ -113,32 +182,35 @@ public class QuizBox : MonoBehaviour {
 
 	IEnumerator FadeInText(float t)
 	{
+		Debug.Log ("in fade in text");
 		color = new Color (color.r, color.g, color.b, 0);
 		while (color.a < 1.0f) {
 			color.a = color.a + (Time.deltaTime / t);
+			Debug.Log ("waiting for fade in");
 			yield return new WaitForSeconds(Time.deltaTime / t);
 
 		}
 
-		yield return new WaitForSeconds (1.5f);
+		Debug.Log ("waiting for text display");
+		yield return new WaitForSeconds (fadeFloat);
 
+		Debug.Log ("done waiting for text display");
 		yield return StartCoroutine (FadeOutText (t));
 	}
 
 
 	IEnumerator FadeOutText(float t)
 	{
+		Debug.Log ("in fade out text");
 		color = new Color (color.r, color.g, color.b, 1);
 		while (color.a > 0.0f) {
 			color.a = color.a - (Time.deltaTime / t);
+			Debug.Log ("waiting for fade out");
 			yield return new WaitForSeconds(Time.deltaTime / t);
 		}
 		textStillDisplaying = false;
 		screenTextLineNum = screenTextLineNum + 1;
 	}
-
-
-
 
 
 
@@ -210,14 +282,15 @@ public class QuizBox : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if (!takingQuiz) {
+		if (textDisplaySection1 || textDisplaySection2) {
+			GUI.FocusControl(null);
 			displayText.normal.textColor = color;
 			displayText.wordWrap = true;
 			GUI.color = color;
 			displayText.fontSize = (Screen.width + Screen.height) / 40;
 			GUI.TextField(new Rect(Screen.width * (.15f), Screen.height * (.3f), Screen.width * (.7f), Screen.height * (.3f)), currScreenText, displayText);
 		}
-		else {
+		else if (takingQuiz) {
 			// taking the quiz
 			questionStyle.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 10f);
 			answerStyle.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 15f);

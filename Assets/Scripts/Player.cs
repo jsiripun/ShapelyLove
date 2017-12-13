@@ -39,6 +39,10 @@ public class Player : MonoBehaviour {
 		return screenTextToDisplay;
 	}
 
+	public void setScreenTextToDisplay(string filename) {
+		screenTextToDisplay = filename;
+	}
+
 	public string getPlayerShape() {
 		return playerShape;
 	}
