@@ -125,14 +125,23 @@ public class QuizBox : MonoBehaviour {
 			Button button = gameCanvas.GetComponentInChildren<Button> ();
 			InputField input = gameCanvas.GetComponentInChildren<InputField> ();
 
+			Text inputText1 = input.transform.Find ("Text").gameObject.GetComponent<Text>();
+			Text inputText2 = input.transform.Find ("Placeholder").gameObject.GetComponent<Text>();
+			inputText1.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 7f);
+			inputText2.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 7f);
+
+			input.characterLimit = 20;
+
 			float worldScreenHeight = Camera.main.orthographicSize * 2;
 			float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
+			/*
 			Text [] inputTexts = input.GetComponentsInChildren<Text> ();
 
 			for (int i = 0; i < inputTexts.Count(); i++) {
 				inputTexts[i].fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 7f);
-			}
+			} 
+			*/
 
 			input.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, Screen.width * .6f);
 			input.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, Screen.height * .2f);
@@ -156,28 +165,60 @@ public class QuizBox : MonoBehaviour {
 	}
 
 	public void onSubmit() {
-		playerCharName = nameField.text;
+		// check to make sure that the player has inputted correct info
+		if (performInputCheck ()) {
+			playerCharName = nameField.text;
 
-		Debug.Log ("You selected name: " + playerCharName);
-		playa.setPlayerName (playerCharName);
+			Debug.Log ("You selected name: " + playerCharName);
+			playa.setPlayerName (playerCharName);
 
-		Debug.Log ("Player name is also " + playa.getPlayerName ());
-		gettingName = false;
-		textDisplaySection2 = true;
-		gameCanvas.SetActive (gettingName);
+			Debug.Log ("Player name is also " + playa.getPlayerName ());
+			gettingName = false;
+			textDisplaySection2 = true;
+			gameCanvas.SetActive (gettingName);
+		}
 	}
 
+	private bool performInputCheck() {
+		bool toReturn = false;
+
+		if (nameField.text == "") {
+			// get the popup game object that's attached to the input field
+			InputField input = gameCanvas.GetComponentInChildren<InputField> ();
+			GameObject popUp = input.transform.Find ("PopUp").gameObject;
+			Text popUpText = popUp.GetComponentInChildren<Text> ();
+
+			// set the font and size
+			popUpText.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 20f);
+
+			popUp.GetComponent <RectTransform> ().anchoredPosition3D = new Vector3 (0, input.GetComponent<RectTransform>().sizeDelta.y * 2.5f, 0);
+			popUp.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, Screen.width * .3f);
+			popUp.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, Screen.height * .2f);
+
+			popUp.SetActive (true);
+
+			return toReturn;
+		} else {
+			toReturn = true;
+		}
+
+		return toReturn;
+	}
 
 	void displayScreenText() {
 		if (!textStillDisplaying) {
-			currScreenText = screenTextParser.getScreenTextAt (screenTextLineNum);
+			string tempString = screenTextParser.getScreenTextAt (screenTextLineNum);
+			tempString = replaceWithPlayerName (tempString);
+			currScreenText = tempString;
 			textStillDisplaying = true;
 			StartCoroutine (FadeInText (fadeFloat));
 		}
 	}
 
 
-
+	private string replaceWithPlayerName(string toCheckAndReplace){
+		return toCheckAndReplace.Replace ("[PLAYERNAME]", playa.getPlayerName ());;
+	}
 
 
 	IEnumerator FadeInText(float t)
