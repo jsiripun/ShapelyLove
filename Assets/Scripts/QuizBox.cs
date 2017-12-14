@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuizBox : MonoBehaviour {
 
@@ -127,21 +128,15 @@ public class QuizBox : MonoBehaviour {
 
 			Text inputText1 = input.transform.Find ("Text").gameObject.GetComponent<Text>();
 			Text inputText2 = input.transform.Find ("Placeholder").gameObject.GetComponent<Text>();
-			inputText1.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 7f);
-			inputText2.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 7f);
+			inputText1.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 8f);
+			inputText2.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 8f);
 
+			// limit 20 character name
 			input.characterLimit = 20;
 
+			// set the location of the button and inputs based on screen size
 			float worldScreenHeight = Camera.main.orthographicSize * 2;
 			float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
-
-			/*
-			Text [] inputTexts = input.GetComponentsInChildren<Text> ();
-
-			for (int i = 0; i < inputTexts.Count(); i++) {
-				inputTexts[i].fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 7f);
-			} 
-			*/
 
 			input.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, Screen.width * .6f);
 			input.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, Screen.height * .2f);
@@ -160,19 +155,29 @@ public class QuizBox : MonoBehaviour {
 		if (quizLineNum == quizFileLineCount) {
 			//calculate the number of names to figure out what shape the player is
 			playa.setPlayerShape (calculateShape ());
+
+			// load the first scene
+			StartCoroutine(ChangeScene("WelcomeStudents", "WelcomeStudents.txt"));
 		}
+
+	}
+
+	IEnumerator ChangeScene(string sceneName, string sceneDialogue)
+	{
+		playa.loadNextDialogue(sceneDialogue);
+		float fadeTime = GameObject.Find ("QuizBoxObject").GetComponent<Fading>().BeginFade (1);
+		yield return new WaitForSeconds (fadeTime);
+		SceneManager.LoadScene(sceneName);
 
 	}
 
 	public void onSubmit() {
 		// check to make sure that the player has inputted correct info
 		if (performInputCheck ()) {
+			// if the check is good, then set the names up for the player.
 			playerCharName = nameField.text;
-
-			Debug.Log ("You selected name: " + playerCharName);
 			playa.setPlayerName (playerCharName);
 
-			Debug.Log ("Player name is also " + playa.getPlayerName ());
 			gettingName = false;
 			textDisplaySection2 = true;
 			gameCanvas.SetActive (gettingName);
@@ -191,7 +196,7 @@ public class QuizBox : MonoBehaviour {
 			// set the font and size
 			popUpText.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 20f);
 
-			popUp.GetComponent <RectTransform> ().anchoredPosition3D = new Vector3 (0, input.GetComponent<RectTransform>().sizeDelta.y * 2.5f, 0);
+			popUp.GetComponent <RectTransform> ().anchoredPosition3D = new Vector3 (0, input.GetComponent<RectTransform>().sizeDelta.y * 1.3f, 0);
 			popUp.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, Screen.width * .3f);
 			popUp.GetComponent <RectTransform> ().SetSizeWithCurrentAnchors (RectTransform.Axis.Vertical, Screen.height * .2f);
 
@@ -223,30 +228,24 @@ public class QuizBox : MonoBehaviour {
 
 	IEnumerator FadeInText(float t)
 	{
-		Debug.Log ("in fade in text");
 		color = new Color (color.r, color.g, color.b, 0);
 		while (color.a < 1.0f) {
 			color.a = color.a + (Time.deltaTime / t);
-			Debug.Log ("waiting for fade in");
 			yield return new WaitForSeconds(Time.deltaTime / t);
 
 		}
 
-		Debug.Log ("waiting for text display");
 		yield return new WaitForSeconds (fadeFloat);
 
-		Debug.Log ("done waiting for text display");
 		yield return StartCoroutine (FadeOutText (t));
 	}
 
 
 	IEnumerator FadeOutText(float t)
 	{
-		Debug.Log ("in fade out text");
 		color = new Color (color.r, color.g, color.b, 1);
 		while (color.a > 0.0f) {
 			color.a = color.a - (Time.deltaTime / t);
-			Debug.Log ("waiting for fade out");
 			yield return new WaitForSeconds(Time.deltaTime / t);
 		}
 		textStillDisplaying = false;
