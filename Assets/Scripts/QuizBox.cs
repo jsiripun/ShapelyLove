@@ -269,6 +269,8 @@ public class QuizBox : MonoBehaviour {
 			worldScreenHeight / sr.sprite.bounds.size.y, 1);
 	}
 
+
+
 	private string calculateShape() {
 		int squareCount = 0;
 		int triangleCount = 0;

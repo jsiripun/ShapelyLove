@@ -102,8 +102,8 @@ public class DialogueBox : MonoBehaviour {
 		float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
 		background.transform.localScale = new Vector3(
-			worldScreenWidth / sr.sprite.bounds.size.x * 1.75f,
-			worldScreenHeight / sr.sprite.bounds.size.y * 1.75f, 0);
+			worldScreenWidth / sr.sprite.bounds.size.x * 1.3f,
+			worldScreenHeight / sr.sprite.bounds.size.y * 1.3f, 0);
 	}
 
 	void plainDisplay()
@@ -248,13 +248,13 @@ public class DialogueBox : MonoBehaviour {
 
 	void SetSpritePositions(GameObject spriteObj)
 	{
-		if(position == "L" || charName == "Chris")
+		if(position == "L" || charName == "Player")
 		{
-			spriteObj.transform.position = new Vector3(-4, 2, 0);
+			spriteObj.transform.position = new Vector3(-4, 2, -3);
 		}
 		else
 		{
-			spriteObj.transform.position = new Vector3(3, 2, 0);
+			spriteObj.transform.position = new Vector3(3, 2, -3);
 		}
 	}
 }

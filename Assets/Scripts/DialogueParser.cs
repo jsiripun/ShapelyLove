@@ -221,11 +221,14 @@ public class DialogueParser : MonoBehaviour {
 					}
 					
 				} else {
+					print(x);
 					var sprites = Resources.LoadAll("Sprites/Characters/" + x + "/", typeof(Sprite)).Cast<Sprite>();
 					List<Sprite> temp = spritesInDialogue[x];
+					print(temp);
 					foreach (var s in sprites)
 					{
 						temp.Add(s);
+						print(s);
 					}
 				}
 
