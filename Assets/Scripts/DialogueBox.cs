@@ -101,9 +101,10 @@ public class DialogueBox : MonoBehaviour {
 		float worldScreenHeight = Camera.main.orthographicSize * 2;
 		float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
+
 		background.transform.localScale = new Vector3(
-			worldScreenWidth / sr.sprite.bounds.size.x * 1.3f,
-			worldScreenHeight / sr.sprite.bounds.size.y * 1.3f, 0);
+			worldScreenWidth / sr.sprite.bounds.size.x,
+			worldScreenHeight / sr.sprite.bounds.size.y, 1); 
 	}
 
 	void plainDisplay()
@@ -157,21 +158,30 @@ public class DialogueBox : MonoBehaviour {
 
 	void OnGUI()
 	{
-		customStyle.fontSize = (Screen.width + Screen.height) / 35;
-		customStyleName.fontSize = (Screen.width + Screen.height) / 40;
+		customStyle.fontSize = (Screen.width + Screen.height) / 40;
+		customStyleName.fontSize = (Screen.width + Screen.height) / 50;
 		questionStyle.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 10f);
 		answerStyle.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 15f);
+		// set word wrap for all
 		questionStyle.wordWrap = true;
 		answerStyle.wordWrap = true;
+		customStyle.wordWrap = true;
+		customStyleName.wordWrap = true;
+
+		// set padding
+		customStyle.padding.left = 15;
+		customStyle.padding.top = 10;
+		customStyleName.padding.left = 2;
+		customStyleName.padding.top = 1;
 
 		if (clickedDialogue)
 		{
 			GUI.FocusControl(null);
 			GUI.TextField(new Rect(Screen.width * (.1f), Screen.height * (.7f), Screen.width * (.8f), Screen.height * (.3f)), currText, customStyle);
 			if (charName == "Mystery") {
-				GUI.TextField (new Rect (Screen.width * (0), Screen.height * (.6f), Screen.width * (.2f), Screen.height * (.1f)), "???", customStyleName);
+				GUI.TextField (new Rect (Screen.width * (0), Screen.height * (.6f), Screen.width * (.25f), Screen.height * (.1f)), "???", customStyleName);
 			} else {
-				GUI.TextField (new Rect (Screen.width * (0), Screen.height * (.6f), Screen.width * (.2f), Screen.height * (.1f)), charName, customStyleName);
+				GUI.TextField (new Rect (Screen.width * (0), Screen.height * (.6f), Screen.width * (.25f), Screen.height * (.1f)), charName, customStyleName);
 			}
 		}
 
@@ -235,9 +245,9 @@ public class DialogueBox : MonoBehaviour {
 			SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
 			currSprite.sprite = pose;
 		}
-		if(charName != "")
+		else if(charName != "")
 		{
-			GameObject character = GameObject.Find(charName);
+			GameObject character = GameObject.Find("OtherCharacter");
 
 			SetSpritePositions(character);
 
