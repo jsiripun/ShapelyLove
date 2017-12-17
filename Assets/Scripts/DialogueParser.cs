@@ -90,9 +90,22 @@ public class DialogueParser : MonoBehaviour {
 	{
 		string temp = GetName(lineNumber);
 		List<Sprite> tempSpriteArray = spritesInDialogue [temp];
-		if (lineNumber < lines.Count)
-			return tempSpriteArray[int.Parse(lines[lineNumber].pose)];
-
+		if (lineNumber < lines.Count) {
+			if(lines[lineNumber].pose == "angry")
+				return tempSpriteArray [0];
+			else if(lines[lineNumber].pose == "basic")
+				return tempSpriteArray [1];
+			else if(lines[lineNumber].pose == "crying")
+				return tempSpriteArray [2];
+			else if(lines[lineNumber].pose == "embarrassed")
+				return tempSpriteArray [3];
+			else if(lines[lineNumber].pose == "happy")
+				return tempSpriteArray [4];
+			else if(lines[lineNumber].pose == "laughing")
+				return tempSpriteArray [5];
+			else if(lines[lineNumber].pose == "sad")
+				return tempSpriteArray [6];
+		}
 
 		return null;
 	}
