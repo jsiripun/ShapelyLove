@@ -10,11 +10,14 @@ Principal Porter, "With that said, we'll go ahead and split everybody up to get 
 Principal Porter, "Giving the tours will be our upperclassmen who have graciously volunteered to give up their time.", happy, , 0, 0
 Principal Porter, "So please give your undivided attention to each of them as they show you around.", happy, , 0, 0
 Principal Porter, "Go ahead and head over to your assigned tour guide.", basic, , 0, 0
-Grace, "Hiya! My name is Grace, what's your name?", happy, , 0, 0
+Grace, "Hello! My name is Grace, what are your names?", happy, , 0, 0
 Player, "Hi, I'm [PLAYERNAME]", basic, , 0, 0
-Grace, "Nice to meet you [PLAYERNAME]. I'll be showing you around today. How are you doing so far?", happy, , 0, 0
+Blaire, "Hey, I'm Blaire Alders.", basic, , 0, 0
+Milton, "Howdy, I'm Milton Quarter", happy, , 0, 0
+Grace, "Nice to meet you all. I'll be showing you around today. How are you doing so far?", happy, , 0, 0
 "Great!", "I'm okay", "Awful", Q, 0, 0
 Grace, "I'm so glad to hear!", happy, , 2, 1
 Grace, "Oh, well I hope this tour will make your day better than okay.", happy, , 1, 0
 Grace, "I'm sorry to hear. Hopefully this tour will make you feel better", sad, , 0, 0
 Grace, "We're going to start at your home room now, let's get going", happy, , 0, 0
+HomeRoom, WelcomeHomeRoom.txt, "", S, 0, 0

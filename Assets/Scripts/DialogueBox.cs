@@ -240,7 +240,7 @@ public class DialogueBox : MonoBehaviour {
 	{
 		if(charName != "")
 		{
-			GameObject character = GameObject.Find("OtherCharacter");
+			GameObject character = GameObject.Find("CharacterSprite");
 			SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
 			currSprite.sprite = null;
 		}
@@ -259,7 +259,7 @@ public class DialogueBox : MonoBehaviour {
 		}
 		else if(charName != "")
 		{
-			GameObject character = GameObject.Find("OtherCharacter");
+			GameObject character = GameObject.Find("CharacterSprite");
 
 			SetSpritePositions(character);
 
@@ -272,11 +272,11 @@ public class DialogueBox : MonoBehaviour {
 	{
 		if(position == "L" || charName == "Player")
 		{
-			spriteObj.transform.position = new Vector3(-4, 2, -3);
+			spriteObj.transform.position = new Vector3(0, 2, -3);
 		}
 		else
 		{
-			spriteObj.transform.position = new Vector3(3, 2, -3);
+			spriteObj.transform.position = new Vector3(0, 2, -3);
 		}
 	}
 

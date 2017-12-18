@@ -40,7 +40,7 @@ public class DialogueParser : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		lines = new List<DialogueLine>();
 		namesInDialogue = new List<string> ();
 		spritesInDialogue = new Dictionary<string, List<Sprite>> ();
