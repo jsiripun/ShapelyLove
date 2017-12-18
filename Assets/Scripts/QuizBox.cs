@@ -131,8 +131,8 @@ public class QuizBox : MonoBehaviour {
 			inputText1.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 8f);
 			inputText2.fontSize = Mathf.RoundToInt (((Screen.width * .2f) + (Screen.height * .32f)) / 8f);
 
-			// limit 20 character name
-			input.characterLimit = 20;
+			// limit 15 character name
+			input.characterLimit = 15;
 
 			// set the location of the button and inputs based on screen size
 			float worldScreenHeight = Camera.main.orthographicSize * 2;

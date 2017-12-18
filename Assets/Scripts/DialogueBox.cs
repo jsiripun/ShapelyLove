@@ -59,7 +59,7 @@ public class DialogueBox : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
 		{
 			position = parser.GetPosition(lineNum);
-			dialogue = parser.GetContent(lineNum);
+			dialogue = replaceWithPlayerName(parser.GetContent(lineNum));
 
 			if (position == "Q")
 			{
@@ -72,14 +72,14 @@ public class DialogueBox : MonoBehaviour {
 				// load next scene
 				clickedDialogue = false;
 				charName = parser.GetName(lineNum);
-				dialogue = parser.GetContent(lineNum);
+				dialogue = replaceWithPlayerName(parser.GetContent(lineNum));
 				StartCoroutine(ChangeScene(charName, dialogue));
 				return;
 			}
 			else if (stillRunning)
 			{
 				StopCoroutine(textCoroutine);
-				currText = dialogue;
+				currText = replaceWithPlayerName(dialogue);
 				stillRunning = false;
 
 				lineNum = lineNum + 1 + lineJump;
@@ -114,7 +114,7 @@ public class DialogueBox : MonoBehaviour {
 		currText = "";
 
 		charName = parser.GetName(lineNum);
-		dialogue = parser.GetContent(lineNum);
+		dialogue = replaceWithPlayerName(parser.GetContent(lineNum));
 		pose = parser.GetPose(lineNum);
 		position = parser.GetPosition(lineNum);
 		lineJump = parser.GetLineJump(lineNum);
@@ -158,8 +158,8 @@ public class DialogueBox : MonoBehaviour {
 
 	void OnGUI()
 	{
-		customStyle.fontSize = (Screen.width + Screen.height) / 40;
-		customStyleName.fontSize = (Screen.width + Screen.height) / 50;
+		customStyle.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 13f);
+		customStyleName.fontSize = Mathf.RoundToInt(((Screen.width * .25f) + (Screen.height * .1f)) / 10f);
 		questionStyle.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 10f);
 		answerStyle.fontSize = Mathf.RoundToInt(((Screen.width * .2f) + (Screen.height * .32f)) / 15f);
 		// set word wrap for all
@@ -169,17 +169,28 @@ public class DialogueBox : MonoBehaviour {
 		customStyleName.wordWrap = true;
 
 		// set padding
-		customStyle.padding.left = 15;
+		customStyle.padding.left = 20;
 		customStyle.padding.top = 10;
-		customStyleName.padding.left = 2;
-		customStyleName.padding.top = 1;
+		customStyle.padding.right = 20;
+		customStyle.padding.bottom = 10;
+
+		questionStyle.padding.left = 20;
+		questionStyle.padding.top = 10;
+		questionStyle.padding.right = 20;
+		questionStyle.padding.bottom = 10;
+
+		answerStyle.padding.left = 10;
+		answerStyle.padding.top = 5;
+		answerStyle.padding.right = 10;
+		answerStyle.padding.bottom = 5;
 
 		if (clickedDialogue)
 		{
 			GUI.FocusControl(null);
 			GUI.TextField(new Rect(Screen.width * (.1f), Screen.height * (.7f), Screen.width * (.8f), Screen.height * (.3f)), currText, customStyle);
-			if (charName == "Mystery") {
-				GUI.TextField (new Rect (Screen.width * (0), Screen.height * (.6f), Screen.width * (.25f), Screen.height * (.1f)), "???", customStyleName);
+			if (charName == "Player") {
+				string playerName = playa.getPlayerName ();
+				GUI.TextField (new Rect (Screen.width * (0), Screen.height * (.6f), Screen.width * (.25f), Screen.height * (.1f)), playerName, customStyleName);
 			} else {
 				GUI.TextField (new Rect (Screen.width * (0), Screen.height * (.6f), Screen.width * (.25f), Screen.height * (.1f)), charName, customStyleName);
 			}
@@ -191,7 +202,7 @@ public class DialogueBox : MonoBehaviour {
 			optionOne = parser.GetOptionOne(lineNum);
 			optionTwo = parser.GetOptionTwo(lineNum);
 			lineJump = parser.GetLineJump(lineNum);
-			questionOption = parser.GetContent(lineNum - 1);
+			questionOption = replaceWithPlayerName(parser.GetContent(lineNum - 1));
 
 			GUI.Label(new Rect(Screen.width * (.1f), Screen.height * (0), Screen.width * (.8f), Screen.height * (.3f)), questionOption, questionStyle);
 
@@ -224,11 +235,12 @@ public class DialogueBox : MonoBehaviour {
 		}
 	}
 
+
 	void ResetImages()
 	{
 		if(charName != "")
 		{
-			GameObject character = GameObject.Find(charName);
+			GameObject character = GameObject.Find("OtherCharacter");
 			SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
 			currSprite.sprite = null;
 		}
@@ -266,5 +278,9 @@ public class DialogueBox : MonoBehaviour {
 		{
 			spriteObj.transform.position = new Vector3(3, 2, -3);
 		}
+	}
+
+	private string replaceWithPlayerName(string toCheckAndReplace){
+		return toCheckAndReplace.Replace ("[PLAYERNAME]", playa.getPlayerName ());;
 	}
 }

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 
-	private static string playerShape = "";
-	private static string playerName = "";
+	private static string playerShape = "Circle";
+	private static string playerName = "Dwayne Johnson";
 	public static int relationshipLvlBella = 0;
 	public static string quizToLoad = "PlayerQuizQuestions.txt";
 	public static string screenTextToDisplay = "QuizStartText.txt";
