@@ -1,0 +1,19 @@
+Grace, "Welcome to the pottery room. Pottery club meets here after school.", happy, , 0, 0
+Silas, "HEEEYOOOOOOOO", happy, , 0, 0
+Silas, "Welcome to the pottery studio! My name is Silas and I'm the official president of pottery.", happy, , 0, 0
+Silas, "All pottery. Presidential pottery. You can refer to me as such.", happy, , 0, 0
+Grace, "...", basic, , 0, 0
+Grace, "Anyways.. pottery is", basic, , 0, 0
+Silas, "POTTERY.. is a form of art that historians will soon refer to as", happy, , 0, 0
+Grace, "STOP INTERRUPTING ME", angry, , 0, 0
+Silas, "oops I've angered the all perfect and majestic Grace, I'll tell you kiddos next time all about pottery", happy, , 0, 0
+Grace, "Is anyone even interested in pottery here?", basic, , 0, 0
+"I am", "Definitely not", "What is pottery?", Q, 0, 0
+Grace, "Well.. good luck with that.", basic, , 5, 0
+Grace, "At least someone has some sense not to get mixed up in this nonsense.", happy, , 4, 1
+Silas, "WHAT A WONDERFULLY REASONABLE QUESTION!", happy, , 0, 1
+Silas, "Pottery is making not just pots but also, bowls, plates, giraffes, anything you can think of out of clay.", happy, , 0, 0
+Silas, "If you're interested in learning more, don't forget to stop by after class and we can maybe reenact the scene from the movie Ghost together", laughing, , 0, 0
+Grace, "I'd rather be a ghost than stay here any longer", basic, , 0, 0
+Grace, "Let's go.", basic, , 0, 0
+StudentCouncilRoom, WelcomeStudentCouncilRoom.txt, "", S, 0, 0

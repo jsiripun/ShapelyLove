@@ -1,0 +1,17 @@
+Grace, "This is the student council room.", happy, , 0, 0
+Grace, "I'm the president of student council, so I hope you'll all think about joining.", happy, , 0, 0
+Grace, "Student council is in charge of planning all the major school wide activies such as dances and school festivals.", happy, , 0, 0
+Grace, "We are also in charge of approving and setting budgets for the other clubs.", happy, , 0, 0
+Milton, "um.. sorry to interrupt.", sad, , 0, 0
+Milton, "um.. Is there a Dominoes club?", sad, , 0, 0
+Blaire, "Why would they have that? That sounds dumb.", basic, , 0, 0
+Blaire, "That's like a step down from the chess club.", laughing, , 0, 0
+Milton, "...", embarrassed, , 0, 0
+"Don't make fun of him", "Dominoes is stupid", "I'm interested in joining Student Council", Q, 0, 0
+Milton, "Thanks [PLAYERNAME], if there isn't I'd like to start a Dominoes club", happy, , 0, 2
+Blaire, "At least [PLAYERNAME] gets it.", laughing, , 0, 1
+Grace, "Sure, please make sure to stop by after school to properly join.", happy, , 0, 1
+Grace, "Milton, we can set up and register your Dominoes club after school today.", happy, , 0, 0
+Milton, "Thank you Grace!", happy, , 0, 0
+Grace, "Alright, we only have a few more stops. Let's keep going.", happy, , 0, 0
+AthleticField, WelcomeAthleticField.txt, "", S, 0, 0

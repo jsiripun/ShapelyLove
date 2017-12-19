@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
 	private static string playerShape = "Circle";
 	private static string playerName = "Dwayne Johnson";
-	public static int relationshipLvlBella = 0;
+	Dictionary<string, int> relationshipLevels =  new Dictionary<string, int> ();
 	public static string quizToLoad = "PlayerQuizQuestions.txt";
 	public static string screenTextToDisplay = "QuizStartText.txt";
 	public static string currentDialogueLoad = "WelcomeStudents.txt";
@@ -14,9 +14,11 @@ public class Player : MonoBehaviour {
 
 	public void addRelationshipNum(string relName, int relNum)
 	{
-		if (relName == "Bella")
-			relationshipLvlBella += relNum;
-
+		if (relationshipLevels.ContainsKey (relName)) {
+			relationshipLevels [relName] = relNum;
+		} else {
+			relationshipLevels.Add (relName, relNum);
+		}
 	}
 
 	public void loadNextDialogue (string dialogueToLoad)

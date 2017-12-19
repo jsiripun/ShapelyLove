@@ -11,3 +11,4 @@ Grace, "Oh, not much longer.", basic, , 0, 0
 Grace, "Let's get going, we've got a few more spots to cover.", happy, , 0, 0
 Milton, "Okay! I'm ready! Let's goooooooooooo", happy, , 0, 0
 Blaire, "Ugh. Calm down.", basic, , 0, 0
+MusicRoom, WelcomeMusicRoom.txt, "", S, 0, 0

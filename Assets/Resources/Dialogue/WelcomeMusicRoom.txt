@@ -1,0 +1,9 @@
+Grace, "Here we are! This is the music room.", happy, , 0, 0
+Grace, "Here you can learn how to play instruments of all sorts, ranging from the piano to the drums.", happy, , 0, 0
+Grace, "Miss Phelps is the music teacher here.", happy, , 0, 0
+Miss Phelps, "Hey there! Welcome to the music room. I hope you'll all consider joining the music club that meets after school!", happy, , 0, 0
+Blaire, "Do you have any non-boring instruments to learn? Like what about the guitar?", basic, , 0, 0
+Miss Phelps, "We do, just sign stop on by after class today and we can get you started.", happy, , 0, 0
+Blaire, "Cool. I guess this school doesn't completely suck.", basic, , 0, 0
+Grace, "Alright, let's head over to our next stop.", happy, , 0, 0
+PotteryRoom, WelcomePotteryRoom.txt, "", S, 0, 0

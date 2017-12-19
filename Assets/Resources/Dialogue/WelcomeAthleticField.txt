@@ -1,0 +1,18 @@
+Grace, "This is the athletic field. Shape Academy's sports teams all practice here.", happy, , 0, 0
+Grace, "Oh, here's Jack Fuller. He's Shape Academy's star soccer player.", happy, , 0, 0
+Jack, "Hey Grace! Hey everyone!", happy, , 0, 0
+Jack, "We've got an opening on our soccer team. Although 2 of you don't look like you would be much help for the team.", basic, , 0, 0
+Jack, "But you look like you have potential. What's your name?", happy, , 0, 0
+Milton, "Oh I'm Milton!", happy, , 0, 0
+Jack, "Seriously? .. no, not you..", basic, , 0, 0
+Jack, "you!", happy, , 0, 0
+Player, "Oh. I'm [PLAYERNAME].", basic, , 0, 0
+Jack, "Right on, I hope you'd be interested in at least trying out for the team. You look like you've got some serious potential.", happy, , 0, 0
+"Heck yeah", "I'm not interested", "Maybe", Q, 0, 0
+Jack, "Awesome possum! Just stop on by after class and we can get you started.", happy, , 0, 1
+Jack, "Bummer, we could have been good together. I hope you change your mind.", sad, , 0, 0
+Player, "I'm not sure. Let me think about it for a little bit.", basic, , 0, 0
+Jack, "Okay, don't think about it too long. I certainly don't think about things too long.", laughing, , 0, 0
+Grace, "Thanks Jack.", happy, , 0, 0
+Grace, "Let's get going. We just have one more stop.", happy, , 0, 0
+PrincipalOffice, WelcomePrincipalOffice.txt, "", S, 0, 0
