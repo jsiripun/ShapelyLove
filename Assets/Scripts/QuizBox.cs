@@ -157,7 +157,7 @@ public class QuizBox : MonoBehaviour {
 			playa.setPlayerShape (calculateShape ());
 
 			// load the first scene
-			StartCoroutine(ChangeScene("WelcomeStudents", "WelcomeStudents.txt"));
+			StartCoroutine(ChangeScene("Auditorium", "WelcomeStudents.txt"));
 		}
 
 	}

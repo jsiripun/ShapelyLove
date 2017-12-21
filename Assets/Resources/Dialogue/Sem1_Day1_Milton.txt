@@ -1,0 +1,46 @@
+Mr. Gibbs, "Alright, please go ahead and partner up.", happy, , 0, 0
+Milton, "Hiya [PLAYERNAME].. is it okay.. if you don't mind... if.. we can be partners?", embarrassed, , 0, 0
+"Yeah", "No", "Who are you again?", Q, 0, 0
+Milton, "Thanks so much [PLAYERNAME]!! I promise you won't regret it.", happy, , 5, 2
+Milton, "Oh.. I guess I'll try to find someone else..", sad, , 1, 0
+Milton, "I'm Milton. We met yesterday. It's okay that you don't remember.. no one can seem to.", sad, , 0, 0
+Mr. Gibbs, "Alright, looks like everyone is paired up!", happy, , 0, 0
+Milton, ".. sorry [PLAYERNAME].. it looks like everyone else is paired up. I promise I'll do my best.", sad, , 0, 0
+Milton, "I'll do all the work if I have to..", sad, , 0, 0
+Milton, "Although.. I'm not much of a history buff. Any chance you're good at History?", embarrassed, , 0, 0
+"I'm a historian", "Not much", "Uhhh", Q, 0, 0
+Milton, "Oh wow! That's wondeful! What do you know?", happy, , 6, 1
+Milton, "That's okay. I'll learn and do as much as I can. I hope that's okay..", embarrassed, , 1, 0
+Milton, "Oh.. I'm sorry, I hope that wasn't a rude question.. Please forgive me..", embarrassed, , 0, 0
+Milton, "... please don't try to trade partners!", crying, , 0, 0
+Player, "It's fine. Let's just get through this.", basic, , 0, 0
+Milton, "I know I'm not your first choice to have as a partner.", sad, , 0, 0
+Milton, "But at least you were willing to talk to me.", embarrassed, , 2, 0
+Player, "Napoleon was once attacked by a horde of rabbits and had to run away.", laughing, , 0, 0
+Milton, "I didn't know that. That's very interesting!", laughing, , 0, 0
+Milton, "And I hope it's okay to say this.. but I'm glad we're partners..", embarrassed, , 0, 0
+Milton, "All the other kids wouldn't even look at me when I came by.", sad, , 0, 0
+Milton, "But at least you were willing to look at me and talk to me.", happy, , 0, 0
+Player, "Why doesn't anyone else talk to you?", basic, , 0, 0
+Milton, "Oh.. I.. sometimes I...", embarrased, , 0, 0
+Milton, "I get shy.. and sometimes I don't say the right thing.. or say anything.. or..", embarrassed, , 0, 0
+Milton, "if I try to talk they don't like what I say..", sad, , 0, 0
+Milton, "no one really likes the nerd of the school, do they?", sad, , 0, 0
+"I like you", "No, they don't.", "Is class over yet?", Q, 0, 0
+Milton, "REALLY?! I like you too!", happy, , 2, 2
+Milton, "Yeah.. I'm sorry you got stuck with me", sad, , 4, -1
+Milton, "I think it almost is..", basic, , 4, 0
+Milton, "To be honest, I feel so at ease with you. I feel like I can really just be myself.", happy, , 0, 0
+Milton, "I know it's weird to say since we just met yesterday. Or at least my therapist would tell me it's weird.", embarrassed, , 0, 0
+Milton, "I hope I wasn't too forward..", embarrassed, , 1, 0
+Player, "Whatever..", basic, , 0, 0
+Mr. Gibbs, ".. and that's how Albert Einstein declined the role to be Israel’s second President in 1952", happy, , 0, 0
+Mr. Gibbs, "And this is a perfect place to stop our history lesson. Class dismissed! Enjoy the rest of your day everyone!", happy, , 0, 0
+Player, "Class is over.. What club should I go to?", basic, , 0, 0
+"Soccer", "Pottery", "Student Council", Q, 0, 0
+Player, "Off to the Athletic Field I go!", happy, , 2, 0
+Player, "Off to the Pottery Studio I go!", happy, , 2, 0
+Player, "Off to the Student Council Room I go!", happy, , 2, 0
+AthleticField, Sem1_Day1_Jack.txt, "", S, 0, 0
+PotteryRoom, Sem1_Day1_Silas.txt, "", S, 0, 0
+StudentCouncilRoom, Sem1_Day1_Grace.txt, "", S, 0, 0

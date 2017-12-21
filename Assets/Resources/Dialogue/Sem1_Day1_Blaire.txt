@@ -1,0 +1,38 @@
+Mr. Gibbs, "Alright, please go ahead and partner up.", happy, , 0, 0
+Blaire, "Hey [PLAYERNAME].. want to be my science partner?", basic, , 0, 0
+"Yeah", "No", "Who are you again?", Q, 0, 0
+Blaire, "Cool. You seem like you're alright.", happy, , 2, 1
+Blaire, "Whatever, everyone else is paired up anyways so you're stuck with me.", angry, , 1, -1
+Blaire, "Seriously? Dude.. we just met yesterday. I'm Blaire.", basic, , 0, 0
+Blaire, "So how much do you know about science anyways?", basic, , 0, 0
+"I'm a scientist", "Not much", "UHHHH", Q, 0, 0
+Blaire, "Oh, well that's convenient. So you'll know what you're doing then.", happy, , 3, 1
+Blaire, "It's fine. I'm in the same boat.", laughing, , 6, 1
+Blaire, "Just be straight up about it and say yes or no..", angry, , 0, 0
+Blaire, "It'd be better if you just made a decision and told the truth. I've had enough people lying to me. I don't need any more lies in my life.", angry, , 5, 0
+Player, "Yep, I know plenty of science. Like a hypothesis is not a hippo.", happy, , 0, 0
+Player, "And Avogadro's non-hippo hypothesis states that equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules. Which is, in fact, only true for ideal gases.", happy, , 0, 0
+Player, "Also Avogradro's law does not have anything to do with avocados.", basic, , 0, 0
+Blaire, "Cool. That seems like it'll definitely be good for this class.", happy, , 0, 0
+Blaire, "I'm glad you were straight up with me. No wishy washy answers.", happy, , 0, 0
+Blaire, "I've had enough people lying to me in my life. I don't need any other lies.", basic, , 0, 0
+Blaire, "I'm just so over it. Do you know what I mean?", basic, , 0, 0
+"Liars are the worst", "Tiny white lies are okay", "I lie about everything", Q, 0, 0
+Blaire, "Yeah, I totally agree. I'm so glad you get it", happy, , 4, 2
+Blaire, "Seriously?.. How naive can you be? Small lies just turn into bigger and bigger lies. How can anyone build a foundation of trust on that?", angry, , 1, 0
+Blaire, "You're the worst then. You're only ever hurting other people by not telling the truth.", angry, , 0, -1
+Blaire, "Lying is just a way for people to be selfish and not think about others.", angry, , 0, 0
+Blaire, "I don't know if I could ever be with anyone like that.. ever.", sad, , 2, 0
+Blaire, "So many people lie about little things nowadays but it's just that little white lies will always turn into bigger lies.", basic, , 0, 0
+Blaire, "Then it just spirals downwards and how can you ever trust someone who lies? It's like if they lie once, you know they'll lie again.", sad, , 0, 0
+Mr. Gibbs, ".. and that's how Avogadro's law has nothing to do with avocados.", happy, , 0, 0
+Mr. Gibbs, "I think this is a good place to stop for today. That's the end of class for today! Enjoy the rest of your day", happy, , 0, 0
+Blaire, "Anyways.. I'll see you later, [PLAYERNAME]", sad, , 0, 0
+Player, "Class is over.. What club should I go to?", basic, , 0, 0
+"Soccer", "Pottery", "Student Council", Q, 0, 0
+Player, "Off to the Athletic Field I go!", happy, , 2, 0
+Player, "Off to the Pottery Studio I go!", happy, , 2, 0
+Player, "Off to the Student Council Room I go!", happy, , 2, 0
+AthleticField, Sem1_Day1_Jack.txt, "", S, 0, 0
+PotteryRoom, Sem1_Day1_Silas.txt, "", S, 0, 0
+StudentCouncilRoom, Sem1_Day1_Grace.txt, "", S, 0, 0

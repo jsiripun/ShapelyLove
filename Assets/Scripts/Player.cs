@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 	Dictionary<string, int> relationshipLevels =  new Dictionary<string, int> ();
 	public static string quizToLoad = "PlayerQuizQuestions.txt";
 	public static string screenTextToDisplay = "QuizStartText.txt";
-	public static string currentDialogueLoad = "WelcomeStudents.txt";
+	public static string currentDialogueLoad = "Sem1_Day1_HomeRoom.txt";
 	//public static string currentDialogueLoad = "DialogueAbuelaHome_Start.txt"; //change after done testing
 
 	public void addRelationshipNum(string relName, int relNum)

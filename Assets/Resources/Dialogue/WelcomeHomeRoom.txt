@@ -7,7 +7,7 @@ Mr. Gibbs, "Please, don't let me interupt your tour. Continue onwards Grace.", h
 Grace, "Thanks Mr. Gibbs. Anyways, home room is where your class will meet daily and you'll get to meet with your classmates.", happy, , 0, 0
 Grace, "Any questions before we move to the next spot?", happy, , 0, 0
 Blaire, "Yeah, how long is this tour going to take?", basic, , 0, 0
-Grace, "Oh, not much longer.", basic, , 0, 0
+Grace, "I mean, we literally just started.", basic, , 0, 0
 Grace, "Let's get going, we've got a few more spots to cover.", happy, , 0, 0
 Milton, "Okay! I'm ready! Let's goooooooooooo", happy, , 0, 0
 Blaire, "Ugh. Calm down.", basic, , 0, 0

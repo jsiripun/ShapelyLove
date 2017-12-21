@@ -4,4 +4,4 @@ Secretary Wilson, "Oh hello there! Aren't you all so adorable?", laughing, , 0, 
 Secretary Wilson, "My name is Ms. Wilson, I'm Principal Porter's secretary.", happy, , 0, 0
 Secretary Wilson, "You all just let me know if you need to schedule any time to talk with Principal Porter.", happy, , 0, 0
 Grace, "Thanks Ms. Wilson! We'll get out of your hair now.", happy, , 0, 0
-HomeRoom, WelcomeEnd.txt, "", S, 0, 0
+HomeRoom, WelcomeHomeRoom2.txt, "", S, 0, 0

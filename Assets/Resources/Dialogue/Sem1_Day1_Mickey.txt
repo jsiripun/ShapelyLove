@@ -1,0 +1,48 @@
+Player, "Ahh.. fresh air", happy, , 0, 0
+Mickey, "Yo.. you lost?", basic, , 0, 0
+"Yeah", "No", "Are you?", Q, 0, 0
+Player, "Where am I?", basic, , 2, 0
+Player, "No.. just came for some fresh air or something..", basic, , 3, 1
+Mickey, "I'm definitely not lost. And I guess you aren't either. So it must be fate that we're here together.", happy, , 1, 2
+Mickey, "You're in the alley behind the school. How do you not know where you are? You walked here.. And why aren't you in class?", basic, , 1, 0
+Mickey, "So what brings you here then?", basic, , 0, 0
+Player, "Class was getting just a bit stuffy", basic, , 0, 0
+Mickey, "I know that feeling. I'm here a lot cause of it", basic, , 0, 0
+Player, "What do you do out here?", basic, , 0, 0
+Mickey, "Little bit of a dumb question there, don'tcha think?", basic, , 0, 0
+Mickey, "Just take a guess on what I do out here.", basic, , 0, 0
+"You wanted fresh air?", "What's that smell?", "I think it's pretty clear", Q, , 0, 0
+Mickey, "I'm smoking.. air ain't getting much fresher around here..", basic, , 0, 0
+Mickey, "It's that sweet LightGoldenRodYellow Kush", happy, , 0, 1
+Mickey, "Oh so you've done this before? .. you seem like someone who appreciates a good high", happy, , 0, 2
+Mickey, "You want a hit? I don't mind sharing", happy, , 0, 0
+"Yeah", "No thank you", "No, that's disgusting", Q, 0, 0
+Mickey, "Right on.. here you go", happy, , 10, 2
+Mickey, "No worries, no pressure. If you aren't into it you aren't into it.", happy, , 9, 1
+Player, "Smoking is bad for you. Everyone who smokes just wants to be high and on drugs.", angry, , 0, 0
+Mickey, "Woah there.. you're being pretty rude and judgemental there.", angry, , 0, -2
+Mickey, "Just cause you don't like somethin' doesn't mean you can talk smack on other folks cause of your own personal opinions.", angry, , 0, 0
+Mickey, "Not everyone who smokes just wants to get high..", angry, , 0, 0
+Mickey, "Some people don't have a choice.. cause otherwise everything hurts..", sad, , 0, 0
+Mickey, "Sometimes people need to smoke so that they don't feel pain.. not cause they want to just be high and on drugs.", sad, , 0, 0
+Mickey, ".. It's like the feeling of a calm ocean after a tsunami is happening inside your body..", sad, , 0, 0
+Player, "...", sad, , 0, 0
+Mickey, "sorry to be a downer..", sad, , 4, 0
+Mickey, "Y'know, I hate it when people judge others for smoking. Not everyone does it for the high..", sad, , 0, 0
+Mickey, "Some of us do it cause we're in pain otherwise.. cause if we don't.. sometimes we can't get out of bed..", sad, , 0, 0
+Mickey, "Not saying that's me.. just saying in general..", laughing, , 0, 0
+Mickey, "....", sad, , 0, 0
+Mickey, "Y'know, normally I'm out here on my own but I wouldn't mind it if you came by again", happy, , 0, 0
+Mickey, "Anyways, looks like class is just about up.", basic, , 0, 0
+Mickey, "I'm outta here.", happy, , 0, 0
+Mickey, "Oh forgive my manners.. I almost forgot.. before I go, what's your name? My name's Mickey", embarrassed, , 0, 0
+Player, "I'm [PLAYERNAME].", basic, , 0, 0
+Mickey, "Maybe see you later then [PLAYERNAME]", basic, , 0, 0
+Player, "Well.. might as well go to a club now.. which club should I go to?", basic, , 0, 0
+"Soccer", "Pottery", "Student Council", Q, 0, 0
+Player, "Off to the Athletic Field I go!", happy, , 2, 0
+Player, "Off to the Pottery Studio I go!", happy, , 2, 0
+Player, "Off to the Student Council Room I go!", happy, , 2, 0
+AthleticField, Sem1_Day1_Jack.txt, "", S, 0, 0
+PotteryRoom, Sem1_Day1_Silas.txt, "", S, 0, 0
+StudentCouncilRoom, Sem1_Day1_Grace.txt, "", S, 0, 0

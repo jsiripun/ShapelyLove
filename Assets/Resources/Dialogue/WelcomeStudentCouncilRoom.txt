@@ -8,10 +8,10 @@ Blaire, "Why would they have that? That sounds dumb.", basic, , 0, 0
 Blaire, "That's like a step down from the chess club.", laughing, , 0, 0
 Milton, "...", embarrassed, , 0, 0
 "Don't make fun of him", "Dominoes is stupid", "I'm interested in joining Student Council", Q, 0, 0
-Milton, "Thanks [PLAYERNAME], if there isn't I'd like to start a Dominoes club", happy, , 0, 2
-Blaire, "At least [PLAYERNAME] gets it.", laughing, , 0, 1
+Milton, "Thanks [PLAYERNAME]! Blaire, if there isn't one already, I'd like to start a Dominoes club", happy, , 2, 2
+Blaire, "At least [PLAYERNAME] gets it.", laughing, , 1, 1
 Grace, "Sure, please make sure to stop by after school to properly join.", happy, , 0, 1
-Grace, "Milton, we can set up and register your Dominoes club after school today.", happy, , 0, 0
+Grace, "Milton, since there is no pre-existing Dominoes club, we can set up and register your Dominoes club after school today.", happy, , 0, 0
 Milton, "Thank you Grace!", happy, , 0, 0
 Grace, "Alright, we only have a few more stops. Let's keep going.", happy, , 0, 0
 AthleticField, WelcomeAthleticField.txt, "", S, 0, 0

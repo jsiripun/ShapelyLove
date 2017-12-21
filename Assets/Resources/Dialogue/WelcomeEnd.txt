@@ -1,0 +1,5 @@
+Player, "Home sweet home.. I guess", sad, , 0, 0
+Player, "I should try to make the best of this..", basic, , 0, 0
+Player, "Well, guess it's time for bed.", basic, , 0, 0
+Player, "Goodnight Nona, miss you..", sad, , 0, 0
+HomeRoom, "Sem1_Day1_HomeRoom.txt", "", S, 0, 0
