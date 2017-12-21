@@ -11,11 +11,11 @@ Mickey, "I know that feeling. I'm here a lot cause of it", basic, , 0, 0
 Player, "What do you do out here?", basic, , 0, 0
 Mickey, "Little bit of a dumb question there, don'tcha think?", basic, , 0, 0
 Mickey, "Just take a guess on what I do out here.", basic, , 0, 0
-"You wanted fresh air?", "What's that smell?", "I think it's pretty clear", Q, , 0, 0
-Mickey, "I'm smoking.. air ain't getting much fresher around here..", basic, , 0, 0
-Mickey, "It's that sweet LightGoldenRodYellow Kush", happy, , 0, 1
+"You wanted fresh air?", "What's that smell?", "I think it's pretty clear", Q, 0, 0
+Mickey, "I'm smoking.. air ain't getting much fresher around here..", basic, , 2, 0
+Mickey, "It's that sweet LightGoldenRodYellow Kush", happy, , 1, 1
 Mickey, "Oh so you've done this before? .. you seem like someone who appreciates a good high", happy, , 0, 2
-Mickey, "You want a hit? I don't mind sharing", happy, , 0, 0
+Mickey, "You want a hit? I don't mind sharing.", happy, , 0, 0
 "Yeah", "No thank you", "No, that's disgusting", Q, 0, 0
 Mickey, "Right on.. here you go", happy, , 10, 2
 Mickey, "No worries, no pressure. If you aren't into it you aren't into it.", happy, , 9, 1
