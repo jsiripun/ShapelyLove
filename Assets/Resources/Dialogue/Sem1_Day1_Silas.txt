@@ -1,0 +1,37 @@
+Silas, "Oh hey there [PLAYERNAME]!", happy, , 0, 0
+Silas, "It's great to see you! I'm glad you decided to stop by pottery.", happy, , 0, 0
+Silas, "You know all the elite shapes come here to learn from the master of pottery", laughing, , 0, 0
+"Teach me, master", "Who's the master?", "It's empty in here", Q, 0, 0
+Silas, "Ohh [PLAYERNAME]! Don't call me master.. you'll get me too excited..", happy, , 2, 2
+Silas, "It is but only me!", laughing, , 1, 1
+Silas, "I mean.. it's empty now but it's filled in our hearts.", embarrassed, , 0, 0
+Silas, "So you're here to learn some pottery, but first let's learn a little about each other.", happy, , 0, 0
+Silas, "I'm Silas.. I love long walks on the beach, spaghetti, and of course dogs", happy, , 0, 0
+Silas, "What are you into?", happy, , 0, 0
+"Sports", "Food", "Murder", Q, 0, 0
+Silas, "Ah.. sports. A competition for the world of shapes.", basic, , 2, 1
+Silas, "What type of food? You know.. Spaghetti is the world's most romantic food.", happy, , 3, 2
+Silas, "Oh. Well.. that's a bit of a touchy subject.", basic, , 6, 0
+Silas, "You know Jack? He's Shape Academy's star soccer player.", happy, , 0, 0
+Silas, "Literally and figuratively.", laughing, , 6, 0
+Silas, "A lot of people would think of chocolates or oysters but with spaghetti.. you can start on the opposite sides of the same string.", happy, , 0, 0
+Silas, "HOW ON EARTH COULD YOU DO THAT WITH AN OYSTER??? That would be the world's biggest and stringiest oyster!", laughing, , 0, 0
+Silas, "We could eat spaghetti together sometime. Maybe start at opposite sides of the same string.", happy, , 0, 0
+Silas, "Just think of the romance in the air! I'll even bring some pocket spaghetti for you next time.", laughing, , 2, 0
+Silas, "Murder would literally touch people in a way they don't want to be touched. Don't go murdering others.. Okay [PLAYERNAME]?", sad, , 0, 0
+Silas, "That's an odd thing to be into. I don't really want to talk about this much more right now..", basic, , 0, 0
+Silas, "So what else are you into?", basic, , 0, 0
+"Shopping", "Reading", "Robbery", Q, 0, 0
+Silas, "I'm not the biggest shopper around but I've been known to buy things now and again as well!", happy, , 2, 1
+Silas, "I'm quite the avid reader as well!", happy, , 3, 1
+Silas, "Ah.. a touchy subject..", basic, , 4, 0
+Silas, "For example, just yesterday I bought some new toothpaste! It was quite a purchase. I'm sure you get it.", happy, , 0, 0
+Silas, "Shopping is quite the thing to do. I've made some other amazing purchases before too! Like a robe.", happy, , 0, 0 // here
+Silas, "I've read magazines, books, stop signs. My favorite book is probably Harry Pottery, Book 3.", happy, , 0, 0
+Silas, "Only cause at that point, no one is dead yet.", basic, , 0, 0 // here
+Silas, "Robbery isn't good. It can just cause horrible things. Everything can get out of hand.", basic, , 0, 0
+Silas, "You want to keep the spaghetti in hand.. not out of hand.. just.. don't go robbing others. Okay [PLAYERNAME]?", sad, , 0, 0 // here
+Silas, "Oh.. look at the time.. sorry we spent this whole time talking and not doing any pottery at all.", laughing, , 0, 0
+Silas, "Next time, we'll get to reenact that scene from Ghost together", happy, , 0, 0
+Silas, "Have a good rest of the day [PLAYERNAME]!", happy, , 0, 0
+PlayerApartment, Sem1_Day1_End.txt, "", S, 0, 0
