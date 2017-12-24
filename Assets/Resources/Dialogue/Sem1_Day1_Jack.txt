@@ -1,0 +1,25 @@
+Jack, "Hey [PLAYERNAME]!", happy, , 0, 0
+Jack, "Did you come here for the soccer club? Or just to check out the star player?", laughing, , 0, 0
+Jack, "I'm glad to see you. How has your first day been going so far?", happy, , 0, 0
+"Great!", "It's okay", "Awful.", Q, 0, 0
+Jack, "Awesome! Well hopefully you have fun today and we can keep this going tomorrow too!", happy, , 2, 0
+Jack, "Oh cool. My day has been okay too.", basic, , 1, 0
+Jack, "Oh, I'm sorry. Just let me know if there's anything I can do to make it better.", sad, , 0, 0
+Jack, "Anyways, have you played soccer before?", basic, , 0, 0
+"Yes", "No", "Spaghetti", Q, 0, 0
+Jack, "Cool! Yeah, I've been playing since I was only 6 years old.", happy, , 2, 2
+Jack, "No worries, I'll teach you everything you need to know.", happy, , 1, 1
+Jack, "What? What does spaghetti have to do with anything?", basic, , 0, 0
+Jack, "I play as the team's goalie. So I keep the other team from scoring goals.", happy, , 0, 0
+Jack, "Soccer is my life so if there's anything you want to know about it, I have the answers.", happy, 0, 0
+"What position will I play?", "Why do you like soccer?", "Spaghetti??", Q, 0, 0
+Jack, "Well the team needs a new forward since our last forward got kicked off the team from bad grades..", sad, , 0, 0 // here
+Jack, "I think I just got thrown into soccer. It's kind of the one thing I'm good at.. everything else has been a struggle..", basic, , 0, 0 // here
+Jack, "I'm really confused.. am I missing something?", embarrassed, , 0, 0 // here
+
+Jack, "Players need to have at least a C average.", basic, , 0, 0
+Jack, "To be honest.. I'm kind of struggling with that as well. I've got some nerd tutoring me so that I can keep playing.", embarrassed, , 0, 0
+Jack, "Don't tell anyone though or I'll smear your body on the floor.", angry, , 0, 0
+
+Jack, "My dad always told me to play a sport cause I'm not good at much else anyways.", basic, , 0, 0
+Jack, "Can't argue with him considering how I'm really struggling to stay on the team. You need to keep a C average", sad, , 0, 0
