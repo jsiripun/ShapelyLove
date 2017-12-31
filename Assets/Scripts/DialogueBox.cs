@@ -149,6 +149,7 @@ public class DialogueBox : MonoBehaviour {
 	IEnumerator ChangeScene(string sceneName, string sceneDialogue)
 	{
 		playa.loadNextDialogue(sceneDialogue);
+		playa.addClassPoint (sceneName, 1);
 		float fadeTime = GameObject.Find ("DialogueBoxObject").GetComponent<Fading>().BeginFade (1);
 		yield return new WaitForSeconds (fadeTime);
 		SceneManager.LoadScene(sceneName);

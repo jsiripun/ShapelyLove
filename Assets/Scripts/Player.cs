@@ -10,12 +10,22 @@ public class Player : MonoBehaviour {
 	public static string quizToLoad = "PlayerQuizQuestions.txt";
 	public static string screenTextToDisplay = "QuizStartText.txt";
 	public static string currentDialogueLoad = "Sem1_Day1_HomeRoom.txt";
-	//public static string currentDialogueLoad = "DialogueAbuelaHome_Start.txt"; //change after done testing
+	Dictionary<string, int> classPoints = new Dictionary<string, int>();
+
+	public void addClassPoint(string className, int classNum)
+	{
+		if (relationshipLevels.ContainsKey (className)) {
+			
+			relationshipLevels [className] = relationshipLevels [className] + classNum;
+		} else {
+			relationshipLevels.Add (className, classNum);
+		}
+	}
 
 	public void addRelationshipNum(string relName, int relNum)
 	{
 		if (relationshipLevels.ContainsKey (relName)) {
-			relationshipLevels [relName] = relNum;
+			relationshipLevels [relName] = relationshipLevels [relName] + relNum;
 		} else {
 			relationshipLevels.Add (relName, relNum);
 		}

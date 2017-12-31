@@ -18,7 +18,7 @@ Jack, "I think I just got thrown into soccer. It's kind of the one thing I'm goo
 Jack, "I'm really confused.. am I missing something?", embarrassed, , 0, 0 // here
 
 Jack, "Players need to have at least a C average.", basic, , 0, 0
-Jack, "To be honest.. I'm kind of struggling with that as well. I've got some nerd tutoring me so that I can keep playing.", embarrassed, , 0, 0
+Jack, "But as long as you're not skipping class you should be just fine.", happy, , 0, 0
 Jack, "Don't tell anyone though or I'll smear your body on the floor.", angry, , 0, 0
 
 Jack, "My dad always told me to play a sport cause I'm not good at much else anyways.", basic, , 0, 0
