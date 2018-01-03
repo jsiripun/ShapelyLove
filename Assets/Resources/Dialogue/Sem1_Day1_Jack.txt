@@ -6,20 +6,36 @@ Jack, "Awesome! Well hopefully you have fun today and we can keep this going tom
 Jack, "Oh cool. My day has been okay too.", basic, , 1, 0
 Jack, "Oh, I'm sorry. Just let me know if there's anything I can do to make it better.", sad, , 0, 0
 Jack, "Anyways, have you played soccer before?", basic, , 0, 0
-"Yes", "No", "Spaghetti", Q, 0, 0
+"I'm a pro!", "No", "A little", Q, 0, 0
 Jack, "Cool! Yeah, I've been playing since I was only 6 years old.", happy, , 2, 2
 Jack, "No worries, I'll teach you everything you need to know.", happy, , 1, 1
-Jack, "What? What does spaghetti have to do with anything?", basic, , 0, 0
+Jack, "I'm sure you'll pick it up again easily.", basic, , 0, 0
 Jack, "I play as the team's goalie. So I keep the other team from scoring goals.", happy, , 0, 0
 Jack, "Soccer is my life so if there's anything you want to know about it, I have the answers.", happy, 0, 0
-"What position will I play?", "Why do you like soccer?", "Spaghetti??", Q, 0, 0
-Jack, "Well the team needs a new forward since our last forward got kicked off the team from bad grades..", sad, , 0, 0 // here
-Jack, "I think I just got thrown into soccer. It's kind of the one thing I'm good at.. everything else has been a struggle..", basic, , 0, 0 // here
-Jack, "I'm really confused.. am I missing something?", embarrassed, , 0, 0 // here
-
-Jack, "Players need to have at least a C average.", basic, , 0, 0
-Jack, "But as long as you're not skipping class you should be just fine.", happy, , 0, 0
-Jack, "Don't tell anyone though or I'll smear your body on the floor.", angry, , 0, 0
-
+"What position will I play?", "Why do you like soccer?", "What is soccer?", Q, 0, 0
+Jack, "Well the team needs a new forward since our last forward got kicked off the team..", sad, , 2, 0
+Jack, "I think I just got thrown into soccer. It's kind of the one thing I'm good at.. everything else has been a struggle..", basic, , 4, 1
+Jack, "Soccer is a sport where you kick with the ball with your foot.", basic, , 10, 0
+Jack, "Players need to have at least a C average.", basic, , 4, 0
+Jack, "Our last forward got kicked off for his grades slipping", sad, , 0, 0
+Jack, "He was a good forward but just couldn't keep up with his school work..", sad, , 0, 0
 Jack, "My dad always told me to play a sport cause I'm not good at much else anyways.", basic, , 0, 0
 Jack, "Can't argue with him considering how I'm really struggling to stay on the team. You need to keep a C average", sad, , 0, 0
+Jack, "But as long as you're not skipping class you should be just fine.", happy, , 0, 0
+Jack, "If I can do it, you definitely can do it too.", basic, , 0, 0
+Jack, "The Coach will vouch for that too. He's always saying 'If dumb ass Jack can do it, so can you'", laughing, , 0, 0
+Jack, "...", sad, , 0, 0
+Jack, "Anyways..", basic, , 10, 0
+Jack, "I think it makes more sense to call it football..", laughing, , 0, 0
+Jack, "But that's just my stupid brain making up things", laughing, , 0, 0
+"That's not dumb.", "Yeah, that's dumb", "Actually.. fun fact..", Q, 0, 0
+Player, "I don't think that's dumb.", happy, , 2, 0
+Jack, "Yeah.. it's stupid.", basic, , 2, 0
+Player, "Only in the United Shapes of America is it called soccer", , 2, 0
+Jack, "Oh, thanks [PLAYERNAME]. Normally my ideas aren't the best.", happy, , 3, 2
+Jack, "Yeah, sorry. Dumb idea.", sad, , 2, -1
+Player, "Everywhere else in the world it's called football. So your brain isn't stupid at all.", happy, , 0, 0
+Jack, "I didn't know that.. what a cool FOOTBALL fact to know! Thanks [PLAYERNAME]!", laughing, , 0, 1
+Jack, "Oh, looks like it's getting late. Let's call it a day for today.", happy, , 0, 0
+Jack, "Hope to see you again next time!", happy, , 0, 0
+PlayerApartment, Sem1_Day1_End.txt, "", S, 0, 0

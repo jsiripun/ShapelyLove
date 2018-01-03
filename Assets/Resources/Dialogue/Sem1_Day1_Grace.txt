@@ -1,0 +1,22 @@
+Grace, "Hi [PLAYERNAME]!", happy, , 0, 0
+Grace, "I'm so happy you decided to come check out student council!", happy, , 0, 0
+Grace, "How was your first day?", basic, , 0, 0
+"Great!", "Okay.", "Terrible", Q, 0, 0
+Grace, "Wonderful, I'm so glad to hear!", happy, , 2, 0
+Grace, "Oh that's alright. First days are always stressful. You'll get more in the groove of things with time.", happy, , 1, 0
+Grace, "I'm so sorry. Well let's get you out of the first day funk.", sad, , 0, 0
+Grace, "So the student council is a student body elected government.", happy, , 0, 0
+Grace, "We can make some big changes throughout the school here!", happy, , 0, 0
+Grace, "We just have to go through the appropriate channels to make any changes.", happy, , 0, 0
+"Why?", "What channels?", "This seems pointless", Q, , 0, 0
+Grace, "Well, if we didn't go through the checks and balances that are put in place our school would basically be a free for all.", basic, , 2, 1
+Grace, "In order for anything to get passed, it needs to be voted on in student council.", happy, , 1, 1
+Grace, "While it may seem pointless, it allows for students to voice their opinions.", basic, , 0, 0
+Grace, "The overall process for any new rules to be passed is for students to submit their proposals. Then as members of student council, we will vote on which proposals are passed or not.", basic, , 0, 0
+Grace, "Since you haven't been officially elected as a member and freshman can't be on the council, you wouldn't get a vote [PLAYERNAME].", basic, , 0, 0
+Grace, "But don't worry, you can run for office next year.", happy, , 0, 0
+Grace, "For now, you can get to know the ins and outs of student council so when you run next year you'll have more experience than other candidates.", happy, , 0, 0
+Grace, "Plus it can give us a chance to get to know each other better.", happy, , 0, 0
+Grace, "But it looks like that'll have to wait until next time. I have a lot to get done today.", basic, , 0, 0
+Grace, "I hope I'll see you again soon!", happy, , 0, 0
+PlayerApartment, Sem1_Day1_End.txt, "", S, 0, 0

@@ -1,15 +1,15 @@
 Mr. Gibbs, "Hello hello hello!", happy, , 0, 0
 Mr. Gibbs, "Does anyone know who I just quoted?", basic, , 0, 0
-"Raven Symone", "Adele", "Rupaul Charles", Q, 0, 0
+"Raven Symone", "Adele", "RuPaul Charles", Q, 0, 0
 Mr. Gibbs, "Sorry, not the right answer", sad, , 3, 0
 Mr. Gibbs, "Sorry, not the right answer", sad, , 2, 0
 Mr. Gibbs, "You're correct!", happy, , 0, 0
 Mr. Gibbs, "Well done [PLAYERNAME]!", happy, , 1, 1
-Mr. Gibbs, "The correct answer is Rupaul Charles.", happy, , 0, 0
+Mr. Gibbs, "The correct answer is RuPaul Charles.", happy, , 0, 0
 Mr. Gibbs, "Welcome to the first official day of class my young shaplings.", happy, , 0, 0
-Mr. Gibbs, "As a part of our learning curiculum here at Shape Academy, we pride our students in taking charge and SHAPING their own future.", laughing, , 0, 0
-Mr. Gibbs, "This also includes having students partner up to form a bond with others. It's important to get along with others which is why we hold a strong emphasis on group work.", happy, , 0, 0
-Mr. Gibbs, "NOW.. What will we be learning today?", happy, , 0, 0
+Mr. Gibbs, "As a part of our learning curriculum here at Shape Academy, we pride our students in taking charge and SHAPING their own future.", laughing, , 0, 0
+Mr. Gibbs, "Students will be working in partnerships as it's important to learn how to get along with others, which is why we hold a strong emphasis on group work.", happy, , 0, 0
+Mr. Gibbs, "Now.. What will we be learning today?", happy, , 0, 0
 "Science", "History", "Skip Class", Q, 0, 0
 Mr. Gibbs, "Science it is", happy, , 2, 0
 Mr. Gibbs, "History it is", happy, , 2, 0

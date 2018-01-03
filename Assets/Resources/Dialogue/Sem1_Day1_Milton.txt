@@ -9,7 +9,7 @@ Milton, ".. sorry [PLAYERNAME].. it looks like everyone else is paired up. I pro
 Milton, "I'll do all the work if I have to..", sad, , 0, 0
 Milton, "Although.. I'm not much of a history buff. Any chance you're good at History?", embarrassed, , 0, 0
 "I'm a historian", "Not much", "Uhhh", Q, 0, 0
-Milton, "Oh wow! That's wondeful! What do you know?", happy, , 6, 1
+Milton, "Oh wow! That's wonderful! What do you know?", happy, , 6, 1
 Milton, "That's okay. I'll learn and do as much as I can. I hope that's okay..", embarrassed, , 1, 0
 Milton, "Oh.. I'm sorry, I hope that wasn't a rude question.. Please forgive me..", embarrassed, , 0, 0
 Milton, "... please don't try to trade partners!", crying, , 0, 0
@@ -22,7 +22,7 @@ Milton, "And I hope it's okay to say this.. but I'm glad we're partners..", emba
 Milton, "All the other kids wouldn't even look at me when I came by.", sad, , 0, 0
 Milton, "But at least you were willing to look at me and talk to me.", happy, , 0, 0
 Player, "Why doesn't anyone else talk to you?", basic, , 0, 0
-Milton, "Oh.. I.. sometimes I...", embarrased, , 0, 0
+Milton, "Oh.. I.. sometimes I...", embarrassed, , 0, 0
 Milton, "I get shy.. and sometimes I don't say the right thing.. or say anything.. or..", embarrassed, , 0, 0
 Milton, "if I try to talk they don't like what I say..", sad, , 0, 0
 Milton, "no one really likes the nerd of the school, do they?", sad, , 0, 0

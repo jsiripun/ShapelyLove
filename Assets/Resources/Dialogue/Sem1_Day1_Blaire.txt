@@ -8,11 +8,11 @@ Blaire, "So how much do you know about science anyways?", basic, , 0, 0
 "I'm a scientist", "Not much", "UHHHH", Q, 0, 0
 Blaire, "Oh, well that's convenient. So you'll know what you're doing then.", happy, , 3, 1
 Blaire, "It's fine. I'm in the same boat.", laughing, , 6, 1
-Blaire, "Just be straight up about it and say yes or no..", angry, , 0, 0
-Blaire, "It'd be better if you just made a decision and told the truth. I've had enough people lying to me. I don't need any more lies in my life.", angry, , 5, 0
+Blaire, "UGH.. Just be straight up about it and say yes or no..", angry, , 0, 0
+Blaire, "Just make a decision. Don't be so wishy washy and definitely don't lie about your answer..", angry, , 5, 0
 Player, "Yep, I know plenty of science. Like a hypothesis is not a hippo.", happy, , 0, 0
 Player, "And Avogadro's non-hippo hypothesis states that equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules. Which is, in fact, only true for ideal gases.", happy, , 0, 0
-Player, "Also Avogradro's law does not have anything to do with avocados.", basic, , 0, 0
+Player, "Also Avogadro's law does not have anything to do with avocados.", basic, , 0, 0
 Blaire, "Cool. That seems like it'll definitely be good for this class.", happy, , 0, 0
 Blaire, "I'm glad you were straight up with me. No wishy washy answers.", happy, , 0, 0
 Blaire, "I've had enough people lying to me in my life. I don't need any other lies.", basic, , 0, 0

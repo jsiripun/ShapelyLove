@@ -1,0 +1,5 @@
+Player, "I'm home!", basic, , 0, 0
+Player, "...", basic, , 0, 0
+Player, "Right.. no one home", basic, , 0, 0
+Player, "Goodnight Nona, miss you..", sad, , 0, 0
+HomeRoom, "Sem1_Day2_HomeRoom.txt", "", S, 0, 0
