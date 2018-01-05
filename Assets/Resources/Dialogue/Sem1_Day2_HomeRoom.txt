@@ -1,0 +1,18 @@
+Mr. Gibbs, "Welcome back everyone!", happy, , 0, 0
+Mr. Gibbs, "As a successful business man once said.. 'I am Beyonce, always'", happy, , 0, 0
+Mr. Gibbs, "Does anyone know who I just quoted?", basic, , 0, 0
+"Bill Gates", "Michael Scott", "Jay-Z", Q, 0, 0
+Mr. Gibbs, "Sorry, not the right answer", sad, , 3, 0
+Mr. Gibbs, "You're correct!", happy, , 1, 0
+Mr. Gibbs, "Sorry, not the right answer", sad, , 1, 0
+Mr. Gibbs, "Well done [PLAYERNAME]!", happy, , 1, 1
+Mr. Gibbs, "The correct answer is Michael Scott.", happy, , 0, 0
+Mr. Gibbs, "So let's hop right into it.", happy, , 0, 0
+Mr. Gibbs, "What will we be learning today?", happy, , 0, 0
+"Science", "History", "Skip Class", Q, 0, 0
+Mr. Gibbs, "Science it is", happy, , 2, 0
+Mr. Gibbs, "History it is", happy, , 2, 0
+Player, "Screw this, I'm out of here.", basic, , 2, 0
+HomeRoom, "Sem1_Day2_Blaire.txt", "", S, 0, 0
+HomeRoom, "Sem1_Day2_Milton.txt", "", S, 0, 0
+AlleyBehindSchool, "Sem1_Day2_Mickey.txt", "", S, 0, 0

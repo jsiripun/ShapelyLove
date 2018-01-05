@@ -8,4 +8,4 @@ Grace, "Alright, just remember you can always come to me if you need any help.",
 Grace, "But yes, I am single.", laughing, , 0, 1
 Grace, "I hope to see you all later. Bye!", happy, , 0, 0
 Mr. Gibbs, "Well. Since today's the first day and you're just getting oriented, that's all we have in store for today. Tomorrow we'll officially begin class.", happy, , 0, 0
-PlayerApartment, WelcomeEnd.txt, "", S, 0, 0
+AlleyBehindSchool, WelcomeAlleyBehindSchool.txt, "", S, 0, 0

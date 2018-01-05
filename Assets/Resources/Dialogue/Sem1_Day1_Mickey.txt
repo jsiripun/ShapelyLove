@@ -1,17 +1,20 @@
-Player, "Ahh.. fresh air", happy, , 0, 0
-Mickey, "Yo.. you lost?", basic, , 0, 0
-"Yeah", "No", "Are you?", Q, 0, 0
-Player, "Where am I?", basic, , 2, 0
-Player, "No.. just came for some fresh air or something..", basic, , 3, 1
-Mickey, "I'm definitely not lost. And I guess you aren't either. So it must be fate that we're here together.", happy, , 1, 2
+Player, "(Hopefully no one catches me playing hooky)", basic, , 0, 0
+Mickey, "YO!", happy, , 0, 0
+Player, "Ahh!", embarrassed, , 0, 0
+Mickey, "Sorry, didn't mean ta scare ya", laughing, , 0, 0
+Mickey, "[PLAYERNAME] right? What'cha doin' out here?", basic, , 0, 0
+"I'm lost", "Fresh Air", "Who are you?", Q, 0, 0
+Player, "Where am I again?", basic, , 2, 1
+Player, "Just came for some fresh air or something..", basic, , 3, 2
+Mickey, "It's me, Mickey. We met yesterday, you seemed a bit lost.", basic, , 1, 0
 Mickey, "You're in the alley behind the school. How do you not know where you are? You walked here.. And why aren't you in class?", basic, , 1, 0
-Mickey, "So what brings you here then?", basic, , 0, 0
+Mickey, "Why you aren't in class?", basic, , 0, 0
 Player, "Class was getting just a bit stuffy", basic, , 0, 0
-Mickey, "I know that feeling. I'm here a lot cause of it", basic, , 0, 0
+Mickey, "I know that feeling. I'm out here a lot cause of it. It's why I'm out here now.", laughing, , 0, 0
 Player, "What do you do out here?", basic, , 0, 0
 Mickey, "Little bit of a dumb question there, don'tcha think?", basic, , 0, 0
 Mickey, "Just take a guess on what I do out here.", basic, , 0, 0
-"You wanted fresh air?", "What's that smell?", "I think it's pretty clear", Q, 0, 0
+"You wanted fresh air?", "What's that smell?", "Do you share?", Q, 0, 0
 Mickey, "I'm smoking.. air ain't getting much fresher around here..", basic, , 2, 0
 Mickey, "It's that sweet LightGoldenRodYellow Kush", happy, , 1, 1
 Mickey, "Oh so you've done this before? .. you seem like someone who appreciates a good high", happy, , 0, 2
@@ -29,20 +32,18 @@ Mickey, ".. It's like the feeling of a calm ocean after a tsunami is happening i
 Player, "...", sad, , 0, 0
 Mickey, "sorry to be a downer..", sad, , 4, 0
 Mickey, "Y'know, I hate it when people judge others for smoking. Not everyone does it for the high..", sad, , 0, 0
-Mickey, "Some of us do it cause we're in pain otherwise.. cause if we don't.. sometimes we can't get out of bed..", sad, , 0, 0
+Mickey, "Some of us do it cause we're in pain otherwise.. cause if we don't.. sometimes we can't even get outta bed..", sad, , 0, 0
 Mickey, "Not saying that's me.. just saying in general..", laughing, , 0, 0
 Mickey, "....", sad, , 0, 0
 Mickey, "Y'know, normally I'm out here on my own but I wouldn't mind it if you came by again", happy, , 0, 0
 Mickey, "Anyways, looks like class is just about up.", basic, , 0, 0
-Mickey, "I'm outta here.", happy, , 0, 0
-Mickey, "Oh forgive my manners.. I almost forgot.. before I go, what's your name? My name's Mickey", embarrassed, , 0, 0
-Player, "I'm [PLAYERNAME].", basic, , 0, 0
-Mickey, "Maybe see you later then [PLAYERNAME]", basic, , 0, 0
+Mickey, "I'm headin' outta here.", happy, , 0, 0
+Mickey, "Hope to see you later then [PLAYERNAME]", basic, , 0, 0
 Player, "Well.. might as well go to a club now.. which club should I go to?", basic, , 0, 0
 "Soccer", "Pottery", "Student Council", Q, 0, 0
-Player, "Off to the Athletic Field I go!", happy, , 2, 0
-Player, "Off to the Pottery Studio I go!", happy, , 2, 0
-Player, "Off to the Student Council Room I go!", happy, , 2, 0
+Player, "(Off to the Athletic Field I go!)", happy, , 2, 0
+Player, "(Off to the Pottery Studio I go!)", happy, , 2, 0
+Player, "(Off to the Student Council Room I go!)", happy, , 2, 0
 AthleticField, Sem1_Day1_Jack.txt, "", S, 0, 0
 PotteryRoom, Sem1_Day1_Silas.txt, "", S, 0, 0
 StudentCouncilRoom, Sem1_Day1_Grace.txt, "", S, 0, 0

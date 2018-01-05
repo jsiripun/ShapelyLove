@@ -1,0 +1,17 @@
+Mr. Gibbs, "Pair up everyone! Let's get our science on!!", laughing, , 0, 0
+Blaire, "Hey [PLAYERNAME]!", happy, , 0, 0
+Blaire, "Ready to get our science on?", laughing, , 0, 0
+"Yes", "No", "BRAIN BLAST!!!", Q, , 0, 0
+Player, "My science is always on", happy, , 2, 0
+Player, "No, I'm so over this class.", basic, , 2, 0
+Player, "Let me tell you a science fun facts!!", happy, , 2, 0
+Blaire, "Good one.", laughing, , 3, 1
+Blaire, "I feel that.", basic, , 2, 1
+Player, "The ears of a cricket are located on the front legs, just below the knee.", happy, , 0, 0
+Blaire, "Well that's a fact I definitely did not need to know.", basic, , 0, 0
+Blaire, "Anyways, I figured we should get to know each other more since we've been partners for a couple of weeks now.", basic, , 0, 0
+Blaire, "So tell me something about yourself.", basic, , 0, 0
+"Hobbies", "Aspirations", "Love", Q, 0, 0
+Player, "We can talk about our hobbies.", basic, , 0, 0
+Player, "We can talk about what we want to do with our lives.", basic, , 0, 0
+Player, "We can talk about our love lives.", basic, , 0, 0

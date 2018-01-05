@@ -30,9 +30,9 @@ Mr. Gibbs, "I think this is a good place to stop for today. That's the end of cl
 Blaire, "Anyways.. I'll see you later, [PLAYERNAME]", sad, , 0, 0
 Player, "Class is over.. What club should I go to?", basic, , 0, 0
 "Soccer", "Pottery", "Student Council", Q, 0, 0
-Player, "Off to the Athletic Field I go!", happy, , 2, 0
-Player, "Off to the Pottery Studio I go!", happy, , 2, 0
-Player, "Off to the Student Council Room I go!", happy, , 2, 0
+Player, "(Off to the Athletic Field I go!)", happy, , 2, 0
+Player, "(Off to the Pottery Studio I go!)", happy, , 2, 0
+Player, "(Off to the Student Council Room I go!)", happy, , 2, 0
 AthleticField, Sem1_Day1_Jack.txt, "", S, 0, 0
 PotteryRoom, Sem1_Day1_Silas.txt, "", S, 0, 0
 StudentCouncilRoom, Sem1_Day1_Grace.txt, "", S, 0, 0

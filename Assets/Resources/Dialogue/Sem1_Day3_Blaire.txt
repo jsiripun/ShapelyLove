@@ -1,0 +1,22 @@
+Mr. Gibbs, "Go ahead and pair up with your assigned science partners!", happy, , 0, 0
+Blaire, "Hey [PLAYERNAME]", basic, , 0, 0
+Blaire, "Listen, I wanted to ask you something..", basic, , 0, 0
+Blaire, "And I think I can ask you now since we've been partners for a while and I guess you could consider us as friends.", basic, , 0, 0
+Blaire, "But don't take it the wrong way okay?..", basic, , 0, 0
+Blaire, "Are you single?", embarrassed, , 0, 0
+Player, "Yeah, I am", basic, , 0, 0
+Blaire, "I was just wondering cause I overheard some of the other students wondering the same thing so it just made me curious..", embarrassed, , 0, 0
+Blaire, "Not that I'm into you... or anything like that.. so don't take it the wrong way...", embarrassed, , 0, 0
+"I wish you were into me", "Good, I'm glad you aren't into me", "Let's change the subject.", Q, 0, 0
+Blaire, "Seriously? Don't mess around with me!", embarrassed, , 0, 2 // here
+Blaire, "Yeah.. that would have been totally weird.. We're better as friends anyways.. I guess", sad, , 0, 0 // here
+Blaire, "Oh.. yeah... Okay.", sad, , 0, 0 // here
+
+Player, "I'm not messing around. I think you're pretty cute.", happy, , 0, 0
+Blaire, "If you're just joking and you think this is funny.. I'll kill you..", angry, , 0, 0
+Player, "I'm serious. You're cute and I'm kind of really into you.", happy, , 0, 0
+Blaire, "Oh..", embarrassed, , 0, 0
+Blaire, "Well I'm kind of into you too..", embarrassed, , 0, 0
+
+Blaire, "Anyways, let's just get back to science class.", basic, , 0, 0
+Blaire,

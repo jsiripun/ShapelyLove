@@ -1,0 +1,22 @@
+Player, "Where am I?", embarrassed, , 0, 0
+Player, "...", embarrassed, , 0, 0
+Player, ".........", embarrassed, , 0, 0
+Mickey, "Yo.. you lost?", basic, , 0, 0
+"Yeah", "No", "Are you?", Q, 0, 0
+Player, "Where am I?", basic, , 2, 0
+Player, "No.. just.. taking the scenic route..", basic, , 2, 0
+Mickey, "Physically, no dude.. but spiritually.. aren't we all a lil' lost?", sad, , 2, 1
+Mickey, "You're in the alley behind the school.", basic, , 1, 0
+Mickey, "I can dig that. Gotta take your time and just enjoy the view.", happy, , 0, 2
+Mickey, "Where you tryin' to get to?", basic, , 0, 0
+Player, "Just trying to get home.", basic, , 0, 0
+Mickey, "Oh, cool. You can get to the front of the school by heading out the alley and to the right.", happy, , 0, 0
+Player, "Thanks!", happy, , 0, 0
+Mickey, "Name's Mickey. And you are?", happy, , 0, 0
+Player, "[PLAYERNAME]", happy, , 0, 0
+Mickey, "I was just heading out. But it was nice ta meet'cha [PLAYERNAME]", happy, , 0, 0
+Mickey, "See ya around. Don't forget, head to the right once yer outta the alley to get outta here.", happy, , 0, 0
+Player, "Thanks Mickey!", happy, , 0, 0
+Mickey, "Later!", happy, , 0, 0
+Player, "(Alright, head to the right)", basic, , 0, 0
+PlayerApartment, WelcomeEnd.txt, "", S, 0, 0
